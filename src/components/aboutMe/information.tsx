@@ -3,17 +3,19 @@ import styled from "styled-components";
 
 const Title = styled.div`
   font-weight: bold;
-  font-size: 80px;
+  font-size: 50px;
   margin: 0;
 `;
 
 const Position = styled.div`
-  font-size: 50px;
+  font-size: 40px;
   color: ${(props) => props.theme.colors.primary};
+  font-weight: 400;
 `;
 
 const Description = styled.div`
   color: black;
+  font-weight: lighter;
 `;
 
 const Information: FunctionComponent = () => (

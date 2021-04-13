@@ -1,14 +1,19 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap');
 body{
     background-color: white;
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica;
+    font-family: 'Helvetica Neue',Helvetica,Arial,sans-serif;
     font-size: 30px;
     user-select: none;
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px) {
+    body{
+        font-size: 25px;
+    }
 }
 
 *{
@@ -23,9 +28,6 @@ h1, h2, h3, h4, h5, h6 {
 .title{
     font-size: 50px;
     font-weight: bold;
-}
-.content {
-    margin: 0px 140px;
 }
 `;
 

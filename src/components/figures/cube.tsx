@@ -1,13 +1,12 @@
 import styled from "styled-components";
 
-const StyledCircle = styled.div<{
-  diameter: string;
+const StyledCube = styled.div<{
+  dimensions: { height: string; width?: string };
   xyPosition?: { top?: string; bottom?: string; left?: string; right?: string };
   color?: "primary" | "secondary" | "info" | string;
-  position?: "fixed" | "absolute";
 }>`
-  height: ${(props) => props.diameter};
-  width: ${(props) => props.diameter};
+  height: ${({ dimensions }) => dimensions.height};
+  width: ${({ dimensions }) => dimensions.width || dimensions.height};
   background-color: ${(props) => {
     if (props.color) {
       if (props.color === "primary") return props.theme.colors.primary;
@@ -16,13 +15,10 @@ const StyledCircle = styled.div<{
       else return props.color;
     } else return "inherit";
   }};
-  border-radius: 500px;
-  z-index: -1;
-  position: ${({ position }) => position || "absolute"};
   ${({ xyPosition }) => xyPosition?.top && `top: ${xyPosition.top}`};
   ${({ xyPosition }) => xyPosition?.bottom && `bottom: ${xyPosition.bottom}`};
   ${({ xyPosition }) => xyPosition?.left && `left: ${xyPosition.left}`};
   ${({ xyPosition }) => xyPosition?.right && `right: ${xyPosition.right}`};
 `;
 
-export default StyledCircle;
+export default StyledCube;
