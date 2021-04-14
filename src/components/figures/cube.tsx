@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 const StyledCube = styled.div<{
-  dimensions: { height: string; width?: string };
+  dimensions?: { height: string; width?: string };
   xyPosition?: { top?: string; bottom?: string; left?: string; right?: string };
   color?: "primary" | "secondary" | "info" | string;
 }>`
-  height: ${({ dimensions }) => dimensions.height};
-  width: ${({ dimensions }) => dimensions.width || dimensions.height};
+  ${({ dimensions }) => `height: ${dimensions?.height}`};
+  ${({ dimensions }) => `width: ${dimensions?.width || dimensions?.height}`};
   background-color: ${(props) => {
     if (props.color) {
       if (props.color === "primary") return props.theme.colors.primary;
