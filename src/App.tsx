@@ -1,25 +1,23 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import {ThemeProvider} from 'styled-components';
+import {AboutMe} from './aboutMe';
+import {Navbar, Main as Body} from './components';
+import {Main} from './main';
+import {ThemeDark, ThemeDefault} from './themes';
+import useSystemTheme from './hooks/useSystemTheme';
+import {Skills} from './skills';
 
 function App() {
+  const isDarkMode = useSystemTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={!isDarkMode ? ThemeDark : ThemeDefault}>
+      <Navbar />
+      <Body>
+        <Main />
+        <AboutMe />
+        <Skills />
+      </Body>
+    </ThemeProvider>
   );
 }
 
