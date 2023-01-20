@@ -3,10 +3,14 @@ import Button from "./button";
 
 const IconButton = styled(Button)`
   border-radius: 100%;
-  width: ${(props) =>
-    props.size === "sm" ? "2rem" : props.size === "lg" ? "5rem" : "3rem"};
-  height: ${(props) =>
-    props.size === "sm" ? "2rem" : props.size === "lg" ? "5rem" : "3rem"};
+  width: 3.4rem;
+  height: 3.4rem;
+  padding: 12px;
+
+  ${({ theme }) => theme.screenSizes.minMediumDevices} {
+    width: 4rem;
+    height: 4rem;
+  }
 `;
 
 export default IconButton;

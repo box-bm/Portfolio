@@ -23,7 +23,7 @@ const SocialMedia: React.FC = () => {
           color={isDark ? darkColor : color}
           onClick={() => onPress(url)}
         >
-          {<Icon />}
+          {<Icon size="100%" />}
         </IconButton>
       ))}
     </SocialMediaContainer>

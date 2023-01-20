@@ -3,7 +3,7 @@ import React from "react";
 class SocialMedia {
   url: string;
   name: string;
-  icon: React.FC;
+  icon: React.FC<any>;
   color: string;
   darkColor: string;
 

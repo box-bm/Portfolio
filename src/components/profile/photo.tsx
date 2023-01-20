@@ -1,11 +1,6 @@
 import styled from "styled-components";
 
-interface Props {
-  url: string;
-}
-
-const Photo = styled.img<Props>`
-  content: url(${(props) => props.url});
+const Photo = styled.img`
   border-radius: 100%;
   width: 100%;
   max-width: 350px;

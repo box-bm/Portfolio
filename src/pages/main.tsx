@@ -1,9 +1,12 @@
-import { Header } from "../components/profile";
+import { Aboutme, Header } from "../components/profile";
+import { Skills } from "../components/skills";
 
 const Main: React.FC = () => {
   return (
     <>
       <Header />
+      <Aboutme />
+      {/* <Skills /> */}
     </>
   );
 };

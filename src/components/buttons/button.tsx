@@ -3,7 +3,6 @@ import styled from "styled-components";
 type Props = {
   color?: string;
   backgroundColor?: string;
-  size?: "sm" | "md" | "lg";
 };
 
 const Button = styled.button<Props>`
@@ -17,6 +16,7 @@ const Button = styled.button<Props>`
   gap: 5px;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `;
 
 export default Button;
