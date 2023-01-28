@@ -1,27 +1,26 @@
 import Skill from "../model/skill";
-import { UilLaptop, UilServerConnection } from "@iconscout/react-unicons";
+import {
+  UilBracketsCurly,
+  UilServerConnection,
+  UilIcons,
+} from "@iconscout/react-unicons";
 import Tool from "../model/tool";
 import TechnologiesIDs from "./technologiesIDs";
 
 const skills: Skill[] = [
   new Skill(
-    "Frontend Developer",
+    "Frontend",
     "I create experiences in your app, using beatiful design and useful for you.",
-    UilLaptop,
+    UilBracketsCurly,
     [
       new Tool(
         "Languajes",
         [
-          TechnologiesIDs.HTML,
-          TechnologiesIDs.CSS,
-          TechnologiesIDs.SASS,
-          TechnologiesIDs.LESS,
           TechnologiesIDs.TYPESCRIPT,
           TechnologiesIDs.JAVASCRIPT,
           TechnologiesIDs.JAVA,
           TechnologiesIDs.DART,
           TechnologiesIDs.KOTLIN,
-          TechnologiesIDs.SWIFT,
         ],
         "paragraph"
       ),
@@ -39,11 +38,12 @@ const skills: Skill[] = [
       new Tool("Tools", [
         TechnologiesIDs.ANDROID_STUDIO,
         TechnologiesIDs.VS_CODE,
+        TechnologiesIDs.VISUAL_STUDIO,
       ]),
     ]
   ),
   new Skill(
-    "Backend Developer",
+    "Backend",
     "I create fastest and scalable backend services. Do more with less work.",
     UilServerConnection,
     [
@@ -74,7 +74,7 @@ const skills: Skill[] = [
   new Skill(
     "Organized",
     "Be more organized help me with to be a more efficient on my projects and develop at time.",
-    UilServerConnection,
+    UilIcons,
     [
       new Tool(
         "Version control",
@@ -86,7 +86,7 @@ const skills: Skill[] = [
         "paragraph"
       ),
       new Tool("Organized", [TechnologiesIDs.CLICKUP, TechnologiesIDs.NOTION]),
-      new Tool("Design", [TechnologiesIDs.FIGMA, TechnologiesIDs.ADOBE_XD]),
+      new Tool("Design", [TechnologiesIDs.FIGMA, TechnologiesIDs.ADOBE_XD, TechnologiesIDs.PROCREATE]),
     ]
   ),
 ];

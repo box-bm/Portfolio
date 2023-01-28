@@ -164,6 +164,12 @@ const technologies: Technology[] = [
 
   // Tools
   new Technology(
+    TechnologiesIDs.PROCREATE,
+    "Procreate",
+    new Date(2021, 1, 1),
+    "https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/23-swift-512.png"
+  ),
+  new Technology(
     TechnologiesIDs.FIGMA,
     "Figma",
     new Date(2021, 1, 1),
