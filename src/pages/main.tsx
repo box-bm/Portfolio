@@ -1,12 +1,12 @@
 import { Aboutme, Header } from "../components/profile";
-import { Skills } from "../components/skills";
+import Skills from "../components/skills/Skills";
 
 const Main: React.FC = () => {
   return (
     <>
       <Header />
       <Aboutme />
-      {/* <Skills /> */}
+      <Skills />
     </>
   );
 };

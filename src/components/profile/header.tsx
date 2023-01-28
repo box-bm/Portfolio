@@ -1,11 +1,13 @@
 import styled from "styled-components";
 import { Name, Position } from "../fonts";
-import Photo from "./photo";
-import SocialMedia from "./socialMedia";
+import Photo from "./Photo";
+import SocialMedia from "./SocialMedia";
 
-const HeaderContainer = styled.section`
+const HeaderContainer = styled.main`
   display: flex;
   height: calc(100vh - 100px);
+  max-height: 900px;
+  padding: 0px 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -42,6 +44,7 @@ const Header: React.FC = () => {
       <div id="info">
         <Name>Brandon Manzo</Name>
         <Position>Full-Stack Developer</Position>
+        <p>I love to write solutions and create your idea to your screen.</p>
         <SocialMedia />
       </div>
     </HeaderContainer>

@@ -1,16 +1,19 @@
 import styled from "styled-components";
-import skills from "../../data/skills";
+import Skill from "./Skill";
 import { Title } from "../fonts";
-import SkillCard from "./skillCard";
+import skills from "../../data/skills";
 
 const SkillsContainer = styled.section`
   padding: 50px 40px;
-  .skills-list {
-    padding: 20px 0px;
+  text-align: center;
+
+  .skill-list {
     gap: 20px;
+    margin-top: 30px;
     display: flex;
+    align-items: stretch;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 100%;
   }
 `;
 
@@ -18,10 +21,9 @@ const Skills: React.FC = () => {
   return (
     <SkillsContainer>
       <Title>Skills</Title>
-      <div className="content"></div>
-      <div className="skills-list">
+      <div className="skill-list">
         {skills.map((skill) => (
-          <SkillCard {...skill} />
+          <Skill key={skill.title} {...skill} />
         ))}
       </div>
     </SkillsContainer>

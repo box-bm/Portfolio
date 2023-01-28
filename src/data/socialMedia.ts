@@ -1,4 +1,4 @@
-import SocialMedia from "../model/social";
+import SocialMedia from "../model/socialMedia";
 
 import {
   UilTwitterAlt,

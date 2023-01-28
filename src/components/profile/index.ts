@@ -1,4 +1,4 @@
-export {default as Aboutme} from "./aboutme";
-export {default as Header} from "./header";
-export {default as Photo} from "./photo";
-export {default as SocialMedia} from "./socialMedia";
+export {default as Aboutme} from "./Aboutme";
+export {default as Header} from "./Header";
+export {default as Photo} from "./Photo";
+export {default as SocialMedia} from "./SocialMedia";

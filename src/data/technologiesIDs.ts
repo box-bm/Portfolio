@@ -1,0 +1,56 @@
+enum TechnologiesIDs {
+  // FRAMEWORKS/LIBRARIES
+  REACT_JS,
+  REACT_NATIVE,
+  NET_CORE,
+  NET_FRAMEWORK,
+  FLUTTER,
+  REDUX,
+  STYLED_COMPONENTS,
+  DIESEL,
+  ACTIX,
+  ANDROID_JETPACK,
+  SPRING,
+  GRAPHQL,
+  NODEJS,
+
+  // Programming languages
+  HTML,
+  CSS,
+  SASS,
+  LESS,
+  TYPESCRIPT,
+  JAVASCRIPT,
+  JAVA,
+  RUST,
+  DART,
+  KOTLIN,
+  SWIFT,
+  C_SHARP,
+  VISUAL_BASIC,
+
+  // Tools
+  FIGMA,
+  NOTION,
+  ADOBE_XD,
+  CLICKUP,
+  VISUAL_STUDIO,
+  INTELLIJ_IDEA,
+  ANDROID_STUDIO,
+  VS_CODE,
+
+  // GIT
+  GIT,
+  GITHUB,
+  BITBUCKET,
+
+  // SQL
+  MSSQL,
+  POSTGRE,
+  MYSQL,
+
+  // NoSQL
+  FIREBASE,
+}
+
+export default TechnologiesIDs;

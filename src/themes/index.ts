@@ -8,8 +8,7 @@ export const GlobalStyles = createGlobalStyle`
         box-sizing: border-box;
     }
     html {
-        line-height: 1.15; 
-        -webkit-text-size-adjust: 100%; 
+        font-size: 62.5%;
     }
     body {
         background-color: ${({ theme }) => theme.backgroundColor};
@@ -20,6 +19,28 @@ export const GlobalStyles = createGlobalStyle`
     }
     h1, h2, h3, h4, h5, h6 {
         margin: 0;
+    }
+
+    h1 {
+        font-size: 4rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    h3 {
+        font-size: 2.75rem;
+    }
+    h4 {
+        font-size: 2.5rem;
+    }
+    h5 {
+        font-size: 2.25rem;
+    }
+    h6 {
+        font-size: 2rem;
+    }
+    body {
+        font-size: 1.6rem;
     }
 
     [hidden] {
