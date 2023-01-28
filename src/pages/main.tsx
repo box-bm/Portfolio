@@ -5,6 +5,7 @@ const Main: React.FC = () => {
   return (
     <>
       <Header />
+      
       <Aboutme />
       <Skills />
     </>
