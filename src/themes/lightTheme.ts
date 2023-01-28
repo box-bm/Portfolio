@@ -8,7 +8,7 @@ const lightTheme: DefaultTheme = {
     borderRaius: "20px",
   },
   colors: {
-    primary: "#1E3C87",
+    primary: "#AC555F",
     black: "#000000",
     white: "#ffffff",
   },

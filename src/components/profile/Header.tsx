@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { Name, Position } from "../fonts";
-import Photo from "./Photo";
+import icon from "../../assets/img/programmer.svg";
 import SocialMedia from "./SocialMedia";
 
 const HeaderContainer = styled.main`
@@ -13,26 +13,35 @@ const HeaderContainer = styled.main`
   flex-direction: column;
 
   #info {
+    flex: 2;
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 400px;
-    min-width: 200px;
-    margin-top: 50px;
     text-align: center;
     justify-content: center;
     align-items: center;
   }
 
+  img {
+    flex: 2;
+    height: calc(100% - 100px);
+    width: 70%;
+    max-width: 800px;
+    display: none;
+  }
+
   ${({ theme }) => theme.screenSizes.minMediumDevices} {
     flex-direction: row;
+    justify-content: space-between;
     gap: 10px;
 
     #info {
-      margin-left: 10px;
       text-align: start;
-      justify-content: flex-start;
+      justify-content: space-between;
       align-items: flex-start;
+    }
+    img {
+      display: block;
     }
   }
 `;
@@ -40,13 +49,13 @@ const HeaderContainer = styled.main`
 const Header: React.FC = () => {
   return (
     <HeaderContainer>
-      <Photo src="https://media.licdn.com/dms/image/D4E03AQEAbVp077q_Ig/profile-displayphoto-shrink_400_400/0/1662251736991?e=1679529600&v=beta&t=HIJ_EAlLVUJpDIxpwjcPzFYSw1XdTJru9AWj8Mzu1E4" />
       <div id="info">
         <Name>Brandon Manzo</Name>
         <Position>Full-Stack Developer</Position>
         <p>I love to write solutions and create your idea to your screen.</p>
         <SocialMedia />
       </div>
+      <img src={icon} alt="header_image" />
     </HeaderContainer>
   );
 };

@@ -25,12 +25,12 @@ const Tool: React.FC<Props> = (props) => {
   const toolTechnologies = technologies.filter((technology) =>
     tools.includes(technology.id)
   );
-  
+
   return (
     <ToolContainer>
       <h2>{title}</h2>
       {type === "paragraph" ? (
-        <>{toolTechnologies.map((tool) => tool?.name).join(", ")}</>
+        <span>{toolTechnologies.map((tool) => tool?.name).join(", ")}</span>
       ) : (
         <ul>
           {toolTechnologies.map((tool) => (

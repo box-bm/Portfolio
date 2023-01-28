@@ -17,9 +17,9 @@ const SkillContainer = styled(Card)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 0 12px;
-    min-height: 200px;
+    margin-top: 30px;
+    margin-bottom 20px;
 
     .icon-bg {
       border-radius: 100%;
@@ -32,7 +32,7 @@ const SkillContainer = styled(Card)`
     }
   }
   .content {
-    padding: 10px 12px;
+    padding: 0px 12px;
   }
 `;
 
@@ -40,6 +40,7 @@ type Props = SkillModel;
 
 const Skill: React.FC<Props> = (props) => {
   const { descritpion, title, icon: Icon, tools } = props;
+
   return (
     <SkillContainer>
       <div className="header">

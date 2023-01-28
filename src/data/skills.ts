@@ -1,15 +1,12 @@
 import Skill from "../model/skill";
-import {
-  UilLaptop,
-  UilServerConnection,
-} from "@iconscout/react-unicons";
+import { UilLaptop, UilServerConnection } from "@iconscout/react-unicons";
 import Tool from "../model/tool";
 import TechnologiesIDs from "./technologiesIDs";
 
 const skills: Skill[] = [
   new Skill(
     "Frontend Developer",
-    "It's my favorite part of development because is the face or first line of a business",
+    "I create experiences in your app, using beatiful design and useful for you.",
     UilLaptop,
     [
       new Tool(
@@ -24,6 +21,7 @@ const skills: Skill[] = [
           TechnologiesIDs.JAVA,
           TechnologiesIDs.DART,
           TechnologiesIDs.KOTLIN,
+          TechnologiesIDs.SWIFT,
         ],
         "paragraph"
       ),
@@ -39,8 +37,6 @@ const skills: Skill[] = [
         "paragraph"
       ),
       new Tool("Tools", [
-        TechnologiesIDs.FIGMA,
-        TechnologiesIDs.ADOBE_XD,
         TechnologiesIDs.ANDROID_STUDIO,
         TechnologiesIDs.VS_CODE,
       ]),
@@ -48,13 +44,12 @@ const skills: Skill[] = [
   ),
   new Skill(
     "Backend Developer",
-    "Backend it's interesting",
+    "I create fastest and scalable backend services. Do more with less work.",
     UilServerConnection,
     [
       new Tool(
         "Languajes",
         [
-          TechnologiesIDs.NODEJS,
           TechnologiesIDs.TYPESCRIPT,
           TechnologiesIDs.JAVASCRIPT,
           TechnologiesIDs.JAVA,
@@ -74,6 +69,24 @@ const skills: Skill[] = [
         TechnologiesIDs.VISUAL_STUDIO,
         TechnologiesIDs.INTELLIJ_IDEA,
       ]),
+    ]
+  ),
+  new Skill(
+    "Organized",
+    "Be more organized help me with to be a more efficient on my projects and develop at time.",
+    UilServerConnection,
+    [
+      new Tool(
+        "Version control",
+        [
+          TechnologiesIDs.GITHUB,
+          TechnologiesIDs.GIT,
+          TechnologiesIDs.BITBUCKET,
+        ],
+        "paragraph"
+      ),
+      new Tool("Organized", [TechnologiesIDs.CLICKUP, TechnologiesIDs.NOTION]),
+      new Tool("Design", [TechnologiesIDs.FIGMA, TechnologiesIDs.ADOBE_XD]),
     ]
   ),
 ];

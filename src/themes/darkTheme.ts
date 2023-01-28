@@ -8,7 +8,7 @@ const darkTheme: DefaultTheme = {
     borderRaius: "20px",
   },
   colors: {
-    primary: "#6B87D0",
+    primary: "#AC555F",
     white: "#000000",
     black: "#ffffff",
   },
