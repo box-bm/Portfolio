@@ -43,6 +43,10 @@ export const GlobalStyles = createGlobalStyle`
         font-size: 1.6rem;
     }
 
+    section {
+        margin-bottom: 50px;
+    }
+
     [hidden] {
         display: none;
     }

@@ -5,7 +5,7 @@ import { Card } from "../Card";
 import SkillModel from "../../model/skill";
 import Tool from "./Tool";
 
-const SkillContainer = styled(Card)<{ color: string }>`
+const SkillContainer = styled(Card)`
   padding: 0px;
   border-radius: 20px;
   flex: 1 1;
@@ -14,42 +14,23 @@ const SkillContainer = styled(Card)<{ color: string }>`
   text-align: center;
 
   .header {
-    height: 260px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: center;
+    padding: 0 12px;
+    min-height: 200px;
 
-    & > * {
-      position: absolute;
-    }
-
-    .title {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .bg-obscure {
-      border-radius: 20px 20px 0 0;
-      background-color: ${(props) => props.color};
-      height: 100%;
-      width: 100%;
-    }
-
-    img {
-      border-radius: 20px 20px 0 0;
-      background-color: #00000080;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
+    .icon-bg {
+      border-radius: 100%;
+      background-color: ${(props) => props.theme.colors.primary};
+      padding: 16px;
+      height: 80px;
+      width: 80px;
+      color: white;
+      margin-bottom: 12px;
     }
   }
-  .icon {
-    font-size: 4rem;
-  }
-
   .content {
     padding: 10px 12px;
   }
@@ -58,14 +39,14 @@ const SkillContainer = styled(Card)<{ color: string }>`
 type Props = SkillModel;
 
 const Skill: React.FC<Props> = (props) => {
-  const { descritpion, title, color, icon: Icon, tools } = props;
+  const { descritpion, title, icon: Icon, tools } = props;
   return (
-    <SkillContainer color={color}>
+    <SkillContainer>
       <div className="header">
-        <div className="title bg-obscure">
-          <Icon className="icon" size="70px" />
-          <Title>{title}</Title>
+        <div className="icon-bg">
+          <Icon className="icon" size="100%" />
         </div>
+        <Title>{title}</Title>
       </div>
       <div className="content">
         <p>{descritpion}</p>

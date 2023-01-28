@@ -4,7 +4,7 @@ import { Title } from "../fonts";
 import skills from "../../data/skills";
 
 const SkillsContainer = styled.section`
-  padding: 50px 40px;
+  padding: 0px 12px;
   text-align: center;
 
   .skill-list {
@@ -19,7 +19,7 @@ const SkillsContainer = styled.section`
 
 const Skills: React.FC = () => {
   return (
-    <SkillsContainer>
+    <SkillsContainer aria-label="Skills section">
       <Title>Skills</Title>
       <div className="skill-list">
         {skills.map((skill) => (

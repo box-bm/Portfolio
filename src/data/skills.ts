@@ -1,8 +1,7 @@
 import Skill from "../model/skill";
 import {
-  UilDesktop,
+  UilLaptop,
   UilServerConnection,
-  UilMobileAndroid,
 } from "@iconscout/react-unicons";
 import Tool from "../model/tool";
 import TechnologiesIDs from "./technologiesIDs";
@@ -11,8 +10,7 @@ const skills: Skill[] = [
   new Skill(
     "Frontend Developer",
     "It's my favorite part of development because is the face or first line of a business",
-    "#53a053",
-    UilDesktop,
+    UilLaptop,
     [
       new Tool(
         "Languajes",
@@ -29,6 +27,17 @@ const skills: Skill[] = [
         ],
         "paragraph"
       ),
+      new Tool(
+        "Framworks/Libraries",
+        [
+          TechnologiesIDs.FLUTTER,
+          TechnologiesIDs.REACT_JS,
+          TechnologiesIDs.REACT_NATIVE,
+          TechnologiesIDs.REDUX,
+          TechnologiesIDs.STYLED_COMPONENTS,
+        ],
+        "paragraph"
+      ),
       new Tool("Tools", [
         TechnologiesIDs.FIGMA,
         TechnologiesIDs.ADOBE_XD,
@@ -40,7 +49,6 @@ const skills: Skill[] = [
   new Skill(
     "Backend Developer",
     "Backend it's interesting",
-    "#a65252",
     UilServerConnection,
     [
       new Tool(
@@ -68,7 +76,6 @@ const skills: Skill[] = [
       ]),
     ]
   ),
-  new Skill("Organized", "", "#4343c0", UilMobileAndroid, []),
 ];
 
 export default skills;
