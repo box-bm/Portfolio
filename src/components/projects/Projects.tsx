@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
       <Title>Projects</Title>
       <div className="projects">
         {projects.map((project) => (
-          <Project {...project} />
+          <Project key={project.title} {...project} />
         ))}
       </div>
       <div className="more">
