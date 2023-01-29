@@ -5,7 +5,7 @@ import SocialMedia from "./SocialMedia";
 
 const HeaderContainer = styled.section`
   display: flex;
-  
+
   max-height: 900px;
   padding: 40px 12px;
   justify-content: center;
@@ -49,7 +49,7 @@ const HeaderContainer = styled.section`
 
 const Header: React.FC = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer id="home">
       <div className="info">
         <Name>Brandon Manzo</Name>
         <Position>Full-Stack Developer</Position>

@@ -19,7 +19,7 @@ const SkillsContainer = styled.section`
 
 const Skills: React.FC = () => {
   return (
-    <SkillsContainer aria-label="Skills section">
+    <SkillsContainer aria-label="Skills section" id="skills">
       <Title>Skills</Title>
       <div className="skill-list">
         {skills.map((skill) => (

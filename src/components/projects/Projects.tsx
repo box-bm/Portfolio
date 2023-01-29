@@ -31,7 +31,7 @@ const ProjectContainer = styled.section`
 const Projects: React.FC = () => {
   const isDark = useThemeDetector();
   return (
-    <ProjectContainer>
+    <ProjectContainer id="projects">
       <Title>Projects</Title>
       <div className="projects">
         {projects.map((project) => (

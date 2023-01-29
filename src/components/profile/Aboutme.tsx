@@ -17,7 +17,7 @@ const AboutMeContainer = styled.section`
 
 const AboutMe: React.FC = () => {
   return (
-    <AboutMeContainer>
+    <AboutMeContainer id="aboutMe">
       <div className="content">
         <Title>About Me</Title>
         <p>
