@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ToolModel from "../../model/tool";
-import technologies from "../../data/technologies";
+import { findTechnologies } from "../../utils/findTechnologies";
 
 const ToolContainer = styled.div`
   margin-bottom: 20px;
@@ -22,9 +22,7 @@ type Props = ToolModel;
 
 const Tool: React.FC<Props> = (props) => {
   const { title, tools, type } = props;
-  const toolTechnologies = technologies.filter((technology) =>
-    tools.includes(technology.id)
-  );
+  const toolTechnologies = findTechnologies(tools);
 
   return (
     <ToolContainer>

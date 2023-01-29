@@ -51,6 +51,11 @@ export const GlobalStyles = createGlobalStyle`
         display: none;
     }
 
+    a {
+        text-decoration: none;
+        color: ${({ theme }) => theme.fonts.color};
+    }
+
     /* Extra small devices (phones, 600px and down) */
     @media only screen and (max-width: 600px) {}
     /* Small devices (portrait tablets and large phones, 600px and up) */

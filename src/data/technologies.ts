@@ -135,7 +135,7 @@ const technologies: Technology[] = [
     TechnologiesIDs.DART,
     "Dart",
     new Date(2021, 1, 1),
-    "https://cdn4.iconfinder.com/data/icons/social-media-logos-6/512/23-swift-512.png"
+    "https://upload.wikimedia.org/wikipedia/commons/c/c6/Dart_logo.png"
   ),
   new Technology(
     TechnologiesIDs.KOTLIN,

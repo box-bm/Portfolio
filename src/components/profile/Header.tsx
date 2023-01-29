@@ -3,7 +3,7 @@ import { Name, Position } from "../fonts";
 import icon from "../../assets/img/header.svg";
 import SocialMedia from "./SocialMedia";
 
-const HeaderContainer = styled.main`
+const HeaderContainer = styled.section`
   display: flex;
   
   max-height: 900px;
@@ -25,7 +25,7 @@ const HeaderContainer = styled.main`
   img {
     order: 1;
     height: calc(100% - 100px);
-    width: 70%;
+    width: 100%;
     max-width: 700px;
   }
 

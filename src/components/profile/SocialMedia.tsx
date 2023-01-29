@@ -3,12 +3,17 @@ import socialMedia from "../../data/socialMedia";
 import useThemeDetector from "../../hooks/useThemeDetector";
 import { IconButton } from "../buttons";
 
-const SocialMediaContainer = styled.div`
+type Props = {
+  reduceColors?: boolean;
+};
+
+const SocialMediaContainer = styled.div<Props>`
   display: flex;
   gap: 10px;
 `;
 
-const SocialMedia: React.FC = () => {
+const SocialMedia: React.FC<Props> = (props) => {
+  const { reduceColors = false } = props;
   const isDark = useThemeDetector();
 
   const onPress = (url: string) => {
@@ -20,7 +25,7 @@ const SocialMedia: React.FC = () => {
       {socialMedia.map(({ icon: Icon, color, darkColor, name, url }) => (
         <IconButton
           key={name}
-          color={isDark ? darkColor : color}
+          color={reduceColors ? "white" : isDark ? darkColor : color}
           onClick={() => onPress(url)}
         >
           {<Icon size="100%" />}
