@@ -27,7 +27,7 @@ const FooterContainer = styled.footer`
 
     .more {
       h2 {
-        margin-bottom: 10px
+        margin-bottom: 10px;
       }
     }
   }
@@ -35,7 +35,13 @@ const FooterContainer = styled.footer`
   .appinfo {
     display: flex;
     background-color: #000000aa;
+    color: white;
     padding: 20px 12px;
+
+    a {
+      color: white;
+      font-weight: bold;
+    }
   }
 `;
 
@@ -67,7 +73,12 @@ const Footer: React.FC = () => {
           </a>
         </div>
       </div>
-      <div className="appinfo">© 2022, brandonmanzo.dev</div>
+      <div className="appinfo">
+        <p>© 2022, brandonmanzo.dev</p>
+        <a href="https://storyset.com/finance">
+          Finance illustrations by Storyset
+        </a>
+      </div>
     </FooterContainer>
   );
 };
