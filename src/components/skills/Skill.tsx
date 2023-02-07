@@ -10,7 +10,7 @@ const SkillContainer = styled(Card)`
   border-radius: 20px;
   flex: 1 1;
   max-width: 380px;
-  min-width: 300px;
+  min-width: 290px;
   text-align: center;
 
   .header {

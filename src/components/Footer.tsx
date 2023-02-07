@@ -13,12 +13,12 @@ const FooterContainer = styled.footer`
     flex-direction: column;
     padding: 20px 12px;
 
-    div {
-      margin-bottom: 12px;
-    }
-
     ${({ theme }) => theme.screenSizes.minMediumDevices} {
       flex-direction: row;
+    }
+
+    div {
+      margin-bottom: 12px;
     }
 
     .regards {
@@ -37,6 +37,10 @@ const FooterContainer = styled.footer`
     background-color: #000000aa;
     color: white;
     padding: 20px 12px;
+
+    & > * {
+      margin: 0;
+    }
 
     a {
       color: white;
@@ -60,24 +64,23 @@ const Footer: React.FC = () => {
         </div>
         <div className="social">
           <h2>Social</h2>
+          <p>My only contact is only on this social media.</p>
           <SocialMedia reduceColors />
         </div>
         <div className="more">
           <h2>More</h2>
           <a
-            href="https://malachite-wanderer-866.notion.site/Engineering-Wiki-f5f66c6df5444b66b1aa4274168ce189"
+            href="https://brandonmanzo.notion.site/Box-Wiki-f5f66c6df5444b66b1aa4274168ce189"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <UilLink size="1.3rem" /> Notes on Notion
+            <UilLink size="1.3rem" /> Blog and Guides on Notion
           </a>
         </div>
       </div>
       <div className="appinfo">
         <p>© 2022, brandonmanzo.dev</p>
-        <a href="https://storyset.com/finance">
-          Finance illustrations by Storyset
-        </a>
+        <a href="https://storyset.com">Illustrations by Storyset</a>
       </div>
     </FooterContainer>
   );

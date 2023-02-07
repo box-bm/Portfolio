@@ -29,7 +29,7 @@ const HeaderContainer = styled.section`
     max-width: 700px;
   }
 
-  ${({ theme }) => theme.screenSizes.minMediumDevices} {
+  ${({ theme }) => theme.screenSizes.minLargeDevices} {
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
@@ -56,7 +56,7 @@ const Header: React.FC = () => {
         <p>I love to write solutions and create your idea to your screen.</p>
         <SocialMedia />
       </div>
-      <img src={icon} alt="icon" />
+      <img src={icon} alt="icon" about="Storyset image" />
     </HeaderContainer>
   );
 };
