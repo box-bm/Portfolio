@@ -7,10 +7,10 @@ import SocialMedia from "../models/socialMedia";
 
 const socialMedia: SocialMedia[] = [
   {
-    url: "",
+    url: "https://github.com/box-bm",
     name: "Github",
     icon: faGithub,
-    color: "black",
+    color: "#000000",
   },
   {
     url: "https://www.linkedin.com/in/bmanzog/",
@@ -19,7 +19,7 @@ const socialMedia: SocialMedia[] = [
     color: "#0072b1",
   },
   {
-    url: "https://www.linkedin.com/in/bmanzog/",
+    url: "https://twitter.com/BoxBMG/",
     name: "Twitter",
     icon: faTwitter,
     color: "#00acee",

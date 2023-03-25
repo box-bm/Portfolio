@@ -11,8 +11,12 @@ const SocialMedia = () => {
         display: "flex",
         gap: 12,
         flexWrap: "wrap",
+        justifyContent: "flex-start",
         maxWidth: 360,
         minWidth: 200,
+        "@xsMax": {
+          justifyContent: "center",
+        },
       }}
     >
       {socialMedia.map((socialMedia) => (
@@ -20,6 +24,9 @@ const SocialMedia = () => {
           auto
           icon={<FontAwesomeIcon icon={socialMedia.icon} />}
           css={{ backgroundColor: socialMedia.color }}
+          onClick={() => {
+            window.open(socialMedia.url);
+          }}
         >
           {socialMedia.name}
         </Button>
