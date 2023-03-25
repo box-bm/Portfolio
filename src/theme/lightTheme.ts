@@ -1,12 +1,12 @@
 import { createTheme } from "@nextui-org/react";
 
 const lightTheme = createTheme({
-  type: "light", // it could be "light" or "dark"
+  type: "light",
   theme: {
     colors: {
-      primary: "#4ADE7B",
-      secondary: "#F9CB80",
-      error: "#FCC5D8",
+      primary: "#2364AA",
+      secondary: "#243E36",
+      error: "#FE5F55",
     },
   },
 });

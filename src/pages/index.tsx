@@ -1,7 +1,10 @@
 import Head from "next/head";
-import { Container } from "@nextui-org/react";
+import { Container, Grid } from "@nextui-org/react";
 import Navbar from "@/components/navbar";
 import Welcome from "@/components/presentation/welcome";
+import ProfilePicture from "@/components/presentation/profilePicture";
+import SocialMedia from "@/components/socialMedia/socialMedia";
+import { Box } from "@/components/box";
 
 export default function Home() {
   return (
@@ -13,7 +16,49 @@ export default function Home() {
       </Head>
       <Navbar />
       <Container>
-        <Welcome />
+        <Box
+          css={{
+            height: "calc(100vh - var(--nextui--navbarHeight))",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            "@xsMax": {
+              flexDirection: "column",
+              justifyContent: "center",
+            },
+          }}
+        >
+          <Box
+            css={{
+              display: "flex",
+              alignItems: "start",
+              justifyContent: "center",
+              flexDirection: "column",
+              order: 1,
+              "@xsMax": {
+                order: 2,
+                textAlign: "center",
+                marginTop: 20
+              },
+            }}
+          >
+            <Welcome />
+            <SocialMedia />
+          </Box>
+          <Box
+            css={{
+              display: "flex",
+              justifyContent: "flex-end",
+              alignItems: "center",
+              order: 2,
+              "@xsMax": {
+                order: 1,
+              },
+            }}
+          >
+            <ProfilePicture />
+          </Box>
+        </Box>
       </Container>
     </>
   );
