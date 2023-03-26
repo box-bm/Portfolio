@@ -10,13 +10,11 @@ const Metrics = ({ metrics }: Props) => {
   return (
     <Box
       css={{
-        width: "100%",
         display: "flex",
-        alignItems: "baseline",
+        alignItems: "start",
         justifyContent: "space-between",
         flexDirection: "row",
-        maxWidth: 720,
-        gap: 12,
+        gap: 10,
         "@smMax": {
           flexDirection: "column",
           alignItems: "center",

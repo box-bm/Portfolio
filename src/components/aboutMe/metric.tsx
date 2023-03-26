@@ -12,9 +12,10 @@ const Metric = ({ number, title, description }: Props) => {
   return (
     <Box
       css={{
-        maxWidth: 160,
+        maxWidth: 200,
+        textAlign: "start",
         "@smMax": {
-          maxWidth: 320,
+          maxWidth: 400,
           textAlign: "center"
         },
       }}

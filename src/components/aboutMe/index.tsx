@@ -2,6 +2,7 @@ import AboutMeCard from "./aboutMeCard";
 import { Section } from "../section";
 import metrics from "../../../lib/data/metrics";
 import Metrics from "./metrics";
+import { Box } from "../box";
 
 const AboutMe = () => {
   return (
@@ -19,7 +20,9 @@ const AboutMe = () => {
       }}
     >
       <AboutMeCard />
-      <Metrics metrics={metrics.filter((metric) => metric.showHome)} />
+      <Box css={{ maxWidth: 720, width: "100%", }}>
+        <Metrics metrics={metrics.filter((metric) => metric.showHome)} />
+      </Box>
     </Section>
   );
 };

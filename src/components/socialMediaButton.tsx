@@ -11,7 +11,7 @@ const SocialMediaButton = ({ socialMedia }: Props) => {
     <Button
       key={socialMedia.url}
       icon={<FontAwesomeIcon icon={socialMedia.icon} />}
-      css={{ backgroundColor: socialMedia.color, minWidth: 140 }}
+      css={{ backgroundColor: socialMedia.color, minWidth: 150 }}
       onClick={() => {
         window.open(socialMedia.url);
       }}

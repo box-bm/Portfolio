@@ -2,16 +2,12 @@ import { Link, Navbar as NextNavbar, Text } from "@nextui-org/react";
 import { useRef } from "react";
 import socialMedia from "../../lib/data/socialMedia";
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Box } from "./box";
 
-const externalSites = [
-  {
-    path: "https://brandonmanzo.notion.site/Box_BM-Guides-and-Blog-f5f66c6df5444b66b1aa4274168ce189",
-    name: "Blog",
-  },
-  ...socialMedia
-    .filter(({ code }) => ["github"].includes(code))
-    .map(({ name, url }) => ({ name, path: url })),
-];
+const externalSites = socialMedia
+  .filter(({ code }) => ["github", "blog"].includes(code))
+  .map(({ name, url, icon }) => ({ name, path: url, icon }));
 
 const sites = [
   { path: "/aboutMe", name: "About Me" },
@@ -54,6 +50,9 @@ const Navbar = () => {
       <NextNavbar.Content enableCursorHighlight hideIn="xs">
         {externalSites.map((link) => (
           <NextNavbar.Link key={link.path} href={link.path} target="_blank">
+            <Box css={{ marginRight: 5 }} as="span">
+              <FontAwesomeIcon icon={link.icon} />
+            </Box>
             {link.name}
           </NextNavbar.Link>
         ))}

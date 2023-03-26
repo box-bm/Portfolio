@@ -9,12 +9,11 @@ const Presentation = () => {
   return (
     <Section
       css={{
-        height: "100vh",
+        height: "65vh",
         overflow: "hidden",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        padding: "20px 0px",
         "@xsMax": {
           flexDirection: "column",
           justifyContent: "center",
