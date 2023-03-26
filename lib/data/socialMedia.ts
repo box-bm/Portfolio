@@ -5,6 +5,7 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import SocialMedia from "../models/socialMedia";
+import { faBlog } from "@fortawesome/free-solid-svg-icons";
 
 const socialMedia: SocialMedia[] = [
   {
@@ -34,6 +35,14 @@ const socialMedia: SocialMedia[] = [
     name: "Instagram",
     icon: faInstagram,
     color: "#4c68d7",
+    hideOnHeading: true,
+  },
+  {
+    code: "blog",
+    url: "https://brandonmanzo.notion.site/Box_BM-Guides-and-Blog-f5f66c6df5444b66b1aa4274168ce189",
+    name: "Guides",
+    icon: faBlog,
+    color: "#20a1b1",
     hideOnHeading: true,
   },
 ];
