@@ -12,6 +12,7 @@ const AboutMe = () => {
         gap: 30,
         flexDirection: "row",
         padding: "20px 0",
+        justifyContent: "space-evenly",
         "@smMax": {
           flexDirection: "column",
         },

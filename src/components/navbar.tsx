@@ -13,7 +13,7 @@ const Navbar = () => {
   const navbarToggleRef = useRef<HTMLButtonElement>(null);
 
   return (
-    <NextNavbar variant="static">
+    <NextNavbar isBordered borderWeight="normal" variant="floating" css={{position: "fixed"}}>
       <NextNavbar.Brand>
         <NextNavbar.Toggle showIn="xs" ref={navbarToggleRef} />
         <Text b h4 css={{ margin: 0, "@smMax": { marginLeft: 12 } }}>

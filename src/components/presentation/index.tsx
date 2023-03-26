@@ -16,6 +16,7 @@ const Presentation = () => {
         "@xsMax": {
           flexDirection: "column",
           justifyContent: "center",
+          marginTop: 60
         },
       }}
     >

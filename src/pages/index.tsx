@@ -3,6 +3,7 @@ import { Container } from "@nextui-org/react";
 import Navbar from "@/components/navbar";
 import Presentation from "@/components/presentation";
 import AboutMe from "@/components/aboutMe";
+import Skills from "@/components/skills";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <Container>
         <Presentation />
         <AboutMe />
+        <Skills />
       </Container>
     </>
   );
