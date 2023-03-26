@@ -2,6 +2,7 @@ import {
   faGithub,
   faLinkedin,
   faTwitter,
+  faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 import SocialMedia from "../models/socialMedia";
 
@@ -26,6 +27,14 @@ const socialMedia: SocialMedia[] = [
     name: "Twitter",
     icon: faTwitter,
     color: "#00acee",
+  },
+  {
+    code: "instagram",
+    url: "https://www.instagram.com/bgmanzo/",
+    name: "Instagram",
+    icon: faInstagram,
+    color: "#4c68d7",
+    hideOnHeading: true,
   },
 ];
 
