@@ -8,6 +8,8 @@ import SkillsData from "@/components/skills";
 import socialMedia from "../../../lib/data/socialMedia";
 import { skillText } from "../../../lib/data/strings";
 import { Main } from "@/components/main";
+import Metrics from "@/components/aboutMe/metrics";
+import metrics from "../../../lib/data/metrics";
 
 const Skills = () => {
   return (
@@ -31,6 +33,9 @@ const Skills = () => {
                 socialMedia.find((social) => social.code === "linkedin")!
               }
             />
+          </Box>
+          <Box css={{ marginTop: 20 }}>
+            <Metrics metrics={metrics} />
           </Box>
           <Box css={{ marginTop: 20 }}>
             <SkillsData />

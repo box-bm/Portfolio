@@ -8,6 +8,7 @@ import { projectsText } from "../../../lib/data/strings";
 import SocialMediaButton from "@/components/socialMediaButton";
 import socialMedia from "../../../lib/data/socialMedia";
 import { Main } from "@/components/main";
+import SocialMedia from "@/components/socialMedia/socialMedia";
 
 type Props = {
   repositories: GithubRepository[];
@@ -30,10 +31,10 @@ const Projects = ({ repositories }: Props) => {
           <Divider css={{ marginBottom: 10 }} />
           <Text>{projectsText}</Text>
           <Box css={{ marginTop: 20 }}>
-            <SocialMediaButton
-              socialMedia={
-                socialMedia.find((social) => social.code === "github")!
-              }
+            <SocialMedia
+              socialMedia={socialMedia.filter((social) =>
+                ["github", "blog"].includes(social.code)
+              )}
             />
           </Box>
           <Box css={{ marginTop: 20 }}>
