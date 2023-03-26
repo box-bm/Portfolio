@@ -6,6 +6,7 @@ interface SocialMedia {
   name: string;
   icon: IconDefinition;
   color: string;
+  hideOnHeading?: boolean;
 }
 
 export default SocialMedia;
