@@ -10,7 +10,10 @@ const ProgrammingLanguages = () => {
     frontend and backend."
     >
       {programmingLanguages.map((programmingLanguage) => (
-        <ProgrammingLanguage programmingLanguage={programmingLanguage} />
+        <ProgrammingLanguage
+          key={programmingLanguage.code}
+          programmingLanguage={programmingLanguage}
+        />
       ))}
     </SkillCard>
   );

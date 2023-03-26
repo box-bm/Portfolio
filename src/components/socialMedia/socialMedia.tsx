@@ -20,7 +20,7 @@ const SocialMedia = ({ socialMedia }: Props) => {
       }}
     >
       {socialMedia.map((socialMedia) => (
-        <SocialMediaButton socialMedia={socialMedia} />
+        <SocialMediaButton key={socialMedia.code} socialMedia={socialMedia} />
       ))}
     </Box>
   );

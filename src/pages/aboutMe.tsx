@@ -5,6 +5,7 @@ import Head from "next/head";
 import socialMedia from "../../lib/data/socialMedia";
 import { aboutMeText, goalsText, hobbiesText } from "../../lib/data/strings";
 import SocialMedia from "@/components/socialMedia/socialMedia";
+import { Main } from "@/components/main";
 
 const AboutMe = () => {
   return (
@@ -16,7 +17,7 @@ const AboutMe = () => {
       </Head>
       <Navbar />
       <Container>
-        <main style={{ height: "auto", overflow: "hidden", marginTop: 100 }}>
+        <Main>
           <Text h2 css={{ margin: 0 }}>
             About Me
           </Text>
@@ -37,7 +38,7 @@ const AboutMe = () => {
               )}
             />
           </Box>
-        </main>
+        </Main>
       </Container>
     </>
   );

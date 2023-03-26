@@ -7,6 +7,7 @@ import SocialMediaButton from "@/components/socialMediaButton";
 import SkillsData from "@/components/skills";
 import socialMedia from "../../../lib/data/socialMedia";
 import { skillText } from "../../../lib/data/strings";
+import { Main } from "@/components/main";
 
 const Skills = () => {
   return (
@@ -18,7 +19,7 @@ const Skills = () => {
       </Head>
       <Navbar />
       <Container>
-        <main style={{ height: "auto", overflow: "hidden", marginTop: 100 }}>
+        <Main>
           <Text h2 css={{ margin: 0 }}>
             Skills
           </Text>
@@ -34,7 +35,7 @@ const Skills = () => {
           <Box css={{ marginTop: 20 }}>
             <SkillsData />
           </Box>
-        </main>
+        </Main>
       </Container>
     </>
   );

@@ -9,6 +9,7 @@ import Skills from "@/components/skills";
 import { Box } from "@/components/box";
 import ViewMoreButton from "@/components/viewMoreButton";
 import { useRouter } from "next/router";
+import { Main } from "@/components/main";
 
 export default function Home() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function Home() {
 
       <Navbar />
       <Container>
-        <main style={{ height: "auto", overflow: "hidden" }}>
+        <Main>
           <Presentation />
           <AboutMe />
           <Box
@@ -54,7 +55,7 @@ export default function Home() {
 
             <Skills />
           </Box>
-        </main>
+        </Main>
       </Container>
     </>
   );

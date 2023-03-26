@@ -1,6 +1,7 @@
 import { Link, Navbar as NextNavbar, Text } from "@nextui-org/react";
 import { useRef } from "react";
 import socialMedia from "../../lib/data/socialMedia";
+import { useRouter } from "next/router";
 
 const externalSites = [
   {
@@ -20,12 +21,12 @@ const sites = [
 ];
 
 const Navbar = () => {
+  const { asPath } = useRouter();
   const navbarToggleRef = useRef<HTMLButtonElement>(null);
 
   return (
     <NextNavbar
       isBordered
-      shouldHideOnScroll
       borderWeight="normal"
       variant="floating"
       css={{ position: "fixed", zIndex: 99999 }}
@@ -41,14 +42,18 @@ const Navbar = () => {
 
       <NextNavbar.Content enableCursorHighlight hideIn="xs">
         {sites.map((link) => (
-          <NextNavbar.Link key={link.path} href={link.path}>
+          <NextNavbar.Link
+            key={link.path}
+            href={link.path}
+            isActive={link.path === asPath}
+          >
             {link.name}
           </NextNavbar.Link>
         ))}
       </NextNavbar.Content>
       <NextNavbar.Content enableCursorHighlight hideIn="xs">
         {externalSites.map((link) => (
-          <NextNavbar.Link key={link.path} href={link.path} target="_blank" >
+          <NextNavbar.Link key={link.path} href={link.path} target="_blank">
             {link.name}
           </NextNavbar.Link>
         ))}

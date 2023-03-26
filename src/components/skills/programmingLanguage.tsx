@@ -8,7 +8,7 @@ type Props = {
 };
 
 const ProgrammingLanguage = ({ programmingLanguage }: Props) => {
-  const { icon, title, description } = programmingLanguage;
+  const { icon, title } = programmingLanguage;
   return (
     <Box
       css={{
