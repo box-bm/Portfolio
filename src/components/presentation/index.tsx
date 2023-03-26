@@ -3,6 +3,7 @@ import SocialMedia from "../socialMedia/socialMedia";
 import ProfilePicture from "./profilePicture";
 import NameTitle from "./nameTitle";
 import { Section } from "../section";
+import socialMedia from "../../../lib/data/socialMedia";
 
 const Presentation = () => {
   return (
@@ -17,7 +18,7 @@ const Presentation = () => {
         "@xsMax": {
           flexDirection: "column",
           justifyContent: "center",
-          marginTop: 60
+          marginTop: 60,
         },
       }}
     >
@@ -37,7 +38,11 @@ const Presentation = () => {
         }}
       >
         <NameTitle />
-        <SocialMedia />
+        <SocialMedia
+          socialMedia={socialMedia.filter(
+            ({ hideOnHeading }) => !hideOnHeading
+          )}
+        />
       </Box>
       <Box
         css={{

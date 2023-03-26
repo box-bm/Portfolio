@@ -1,16 +1,18 @@
 import { Box } from "../box";
-import socialMedia from "../../../lib/data/socialMedia";
+import SocialMediaModel from "../../../lib/models/socialMedia";
 import SocialMediaButton from "../socialMediaButton";
 
-const SocialMedia = () => {
+type Props = {
+  socialMedia: SocialMediaModel[];
+};
+
+const SocialMedia = ({ socialMedia }: Props) => {
   return (
     <Box
       css={{
         display: "flex",
-        gap: 12,
+        gap: 10,
         justifyContent: "flex-start",
-        maxWidth: 280,
-        minWidth: 140,
         "@smMax": {
           justifyContent: "center",
           flexDirection: "column",

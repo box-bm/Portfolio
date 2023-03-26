@@ -1,14 +1,18 @@
-'use client';
+"use client";
 
 import Head from "next/head";
-import { Container } from "@nextui-org/react";
+import { Container, Text } from "@nextui-org/react";
 import Navbar from "@/components/navbar";
 import Presentation from "@/components/presentation";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
-import RepositoriesTable from "@/components/projects/repositoriesTable";
+import { Box } from "@/components/box";
+import ViewMoreButton from "@/components/viewMoreButton";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
     <>
       <Head>
@@ -17,12 +21,39 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
+      <Navbar />
       <Container>
-        <Navbar />
         <main style={{ height: "auto", overflow: "hidden" }}>
           <Presentation />
           <AboutMe />
-          <Skills />
+          <Box
+            css={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              css={{
+                marginTop: 20,
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+              }}
+            >
+              <Text h2 css={{ margin: 0 }}>
+                Skills
+              </Text>
+              <ViewMoreButton
+                auto
+                onClick={() => {
+                  router.push("/skills");
+                }}
+              />
+            </Box>
+
+            <Skills />
+          </Box>
         </main>
       </Container>
     </>

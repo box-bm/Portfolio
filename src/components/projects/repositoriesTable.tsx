@@ -63,7 +63,6 @@ const RepositoriesTable = ({ repositories }: Props) => {
         bordered
         shadow={false}
         sticked
-        compact
         lined
         css={{ minWidth: "100%", maxH: "30px" }}
       >
@@ -77,7 +76,7 @@ const RepositoriesTable = ({ repositories }: Props) => {
           {(repos ?? []).map((repository) => (
             <Table.Row key={`repo_${repository.id}`}>
               <Table.Cell>
-                <Text>{repository.name}</Text>
+                <Text b>{repository.name}</Text>
               </Table.Cell>
               <Table.Cell>
                 <Text
@@ -98,7 +97,7 @@ const RepositoriesTable = ({ repositories }: Props) => {
                   overflowWrap: "break-word",
                   rowGap: 3,
                   columnGap: 2,
-                  minHeight: 35,
+                  minHeight: 50,
                 }}
               >
                 {(repository.topics ?? []).map((topic) => (

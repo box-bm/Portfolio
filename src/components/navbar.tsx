@@ -1,12 +1,22 @@
 import { Link, Navbar as NextNavbar, Text } from "@nextui-org/react";
 import { useRef } from "react";
+import socialMedia from "../../lib/data/socialMedia";
+
+const externalSites = [
+  {
+    path: "https://brandonmanzo.notion.site/Box_BM-Guides-and-Blog-f5f66c6df5444b66b1aa4274168ce189",
+    name: "Blog",
+  },
+  ...socialMedia
+    .filter(({ code }) => ["github"].includes(code))
+    .map(({ name, url }) => ({ name, path: url })),
+];
 
 const sites = [
-  { path: "/skills", name: "Skills" },
-  { path: "/contact", name: "Contact" },
-  { path: "/projects", name: "Projects" },
   { path: "/aboutMe", name: "About Me" },
-  { path: "/blog", name: "Blog" },
+  { path: "/skills", name: "Skills" },
+  { path: "/projects", name: "Projects" },
+  { path: "/contact", name: "Contact" },
 ];
 
 const Navbar = () => {
@@ -15,6 +25,7 @@ const Navbar = () => {
   return (
     <NextNavbar
       isBordered
+      shouldHideOnScroll
       borderWeight="normal"
       variant="floating"
       css={{ position: "fixed", zIndex: 99999 }}
@@ -31,6 +42,13 @@ const Navbar = () => {
       <NextNavbar.Content enableCursorHighlight hideIn="xs">
         {sites.map((link) => (
           <NextNavbar.Link key={link.path} href={link.path}>
+            {link.name}
+          </NextNavbar.Link>
+        ))}
+      </NextNavbar.Content>
+      <NextNavbar.Content enableCursorHighlight hideIn="xs">
+        {externalSites.map((link) => (
+          <NextNavbar.Link key={link.path} href={link.path} target="_blank" >
             {link.name}
           </NextNavbar.Link>
         ))}
