@@ -8,7 +8,8 @@ const Presentation = () => {
   return (
     <Section
       css={{
-        minHeight: "calc(100vh - var(--nextui--navbarHeight))",
+        height: "100vh",
+        overflow: "hidden",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",

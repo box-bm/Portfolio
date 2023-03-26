@@ -6,7 +6,7 @@ import SkillCard from "./skillCard";
 const Frameworks = () => {
   return (
     <SkillCard
-      title="Frameworks"
+      title="Frameworks and Libraries"
       description="Some frameworks what I use in my career. Powerful tools to transform ideas to a real product"
     >
       {frameworks.map((framework) => (

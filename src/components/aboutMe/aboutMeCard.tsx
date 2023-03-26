@@ -1,6 +1,7 @@
 import { aboutMeText } from "../../../lib/data/strings";
 import { Button, Card, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
+import ViewMoreButton from "../viewMoreButton";
 
 const AboutMeCard = () => {
   const router = useRouter();
@@ -12,9 +13,7 @@ const AboutMeCard = () => {
         <Text>{aboutMeText}</Text>
       </Card.Body>
       <Card.Footer>
-        <Button flat auto onPress={() => router.push("/aboutMe")}>
-          View More
-        </Button>
+        <ViewMoreButton onClick={() => router.push("/aboutMe")} />
       </Card.Footer>
     </Card>
   );

@@ -10,12 +10,17 @@ const Language = ({ language }: Props) => {
   const { description, name, percent } = language;
 
   return (
-    <Box>
-      <Text b>
-        {name} <Text span css={{fontWeight: "$light"}}>{description}</Text>
-      </Text>
-      <Progress color="primary" value={percent * 100} size="sm" />
-    </Box>
+    <>
+      <Box>
+        <Text b span>
+          {name}{" "}
+        </Text>
+        <Text span css={{ fontWeight: "$light" }}>
+          {description}
+        </Text>
+      </Box>
+      <Progress color="primary" shadow size="sm" value={percent * 100} />
+    </>
   );
 };
 

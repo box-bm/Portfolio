@@ -2,6 +2,7 @@ import { createTheme } from "@nextui-org/react";
 
 const lightTheme = createTheme({
   type: "light",
+  className: 'light-modern',
   theme: {
     colors: {
       primary: "#2364AA",
