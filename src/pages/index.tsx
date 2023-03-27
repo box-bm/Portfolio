@@ -11,8 +11,14 @@ import ViewMoreButton from "@/components/buttons/viewMoreButton";
 import { useRouter } from "next/router";
 import { Main } from "@/components/main";
 import Footer from "@/components/footer";
+import { getNavbarSites } from "../../lib/getNavbarSites";
+import NavbarProps from "../../lib/models/navbarProps";
 
-export default function Home() {
+type Props = {
+  navbarSites: NavbarProps;
+};
+
+export default function Home({ navbarSites }: Props) {
   const router = useRouter();
 
   return (
@@ -23,7 +29,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
-      <Navbar />
+      <Navbar {...navbarSites} />
       <Container>
         <Main>
           <Presentation />
@@ -61,4 +67,13 @@ export default function Home() {
       <Footer />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const navbarSites = getNavbarSites();
+  return {
+    props: {
+      navbarSites,
+    },
+  };
 }

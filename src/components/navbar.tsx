@@ -5,13 +5,11 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "./box";
 import Link from "next/link";
-import { sites } from "../../lib/data/sites";
+import NavbarProps from "../../lib/models/navbarProps";
 
-const externalSites = socialMedia
-  .filter(({ code }) => ["github", "blog"].includes(code))
-  .map(({ name, url, icon }) => ({ name, path: url, icon }));
+type Props = NavbarProps;
 
-const Navbar = () => {
+const Navbar = ({ externalSites, sites }: Props) => {
   const { asPath } = useRouter();
   const navbarToggleRef = useRef<HTMLButtonElement>(null);
 
@@ -42,9 +40,11 @@ const Navbar = () => {
         {externalSites.map((link) => (
           <NextNavbar.Item key={link.path}>
             <Link href={link.path} target="_blank">
-              <Box css={{ marginRight: 5 }} as="span">
-                <FontAwesomeIcon icon={link.icon} />
-              </Box>
+              {link.icon && (
+                <Box css={{ marginRight: 5 }} as="span">
+                  <FontAwesomeIcon icon={link.icon} />
+                </Box>
+              )}
               {link.name}
             </Link>
           </NextNavbar.Item>
@@ -64,10 +64,12 @@ const Navbar = () => {
         <Divider css={{ marginBottom: 10 }} />
         {externalSites.map((link) => (
           <NextNavbar.CollapseItem key={link.path}>
-            <Link href={link.path} color="inherit" target="_blank">
-              <Box css={{ marginRight: 5 }} as="span">
-                <FontAwesomeIcon icon={link.icon} />
-              </Box>
+            <Link href={link.path} target="_blank">
+              {link.icon && (
+                <Box css={{ marginRight: 5 }} as="span">
+                  <FontAwesomeIcon icon={link.icon} />
+                </Box>
+              )}
               {link.name}
             </Link>
           </NextNavbar.CollapseItem>

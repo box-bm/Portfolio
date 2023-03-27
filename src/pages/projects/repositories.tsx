@@ -2,16 +2,11 @@ import Navbar from "@/components/navbar";
 import RepositoriesTable from "@/components/projects/repositoriesTable";
 import { Container, Text } from "@nextui-org/react";
 import Head from "next/head";
-import getGithubRepositories from "../../../lib/data/getGithubRepositories";
 import { Box } from "@/components/box";
 import SocialMediaButton from "@/components/buttons/socialMediaButton";
 import socialMedia from "../../../lib/data/socialMedia";
 
-type Props = {
-  repositories: GithubRepository[];
-};
-
-const Repositories = ({ repositories }: Props) => {
+const Repositories = () => {
   return (
     <>
       <Head>
@@ -24,7 +19,7 @@ const Repositories = ({ repositories }: Props) => {
         <main style={{ paddingTop: 100 }}>
           <Text h2>Repositories</Text>
 
-          <RepositoriesTable repositories={repositories} />
+          <RepositoriesTable />
           <Box css={{ marginTop: 20 }}>
             <SocialMediaButton
               socialMedia={
@@ -37,15 +32,5 @@ const Repositories = ({ repositories }: Props) => {
     </>
   );
 };
-
-export async function getStaticProps() {
-  const repositories = await getGithubRepositories();
-
-  return {
-    props: {
-      repositories,
-    },
-  };
-}
 
 export default Repositories;
