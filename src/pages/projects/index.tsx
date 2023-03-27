@@ -4,11 +4,11 @@ import RepositoriesTable from "@/components/projects/repositoriesTable";
 import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
 import getGithubRepositories from "../../../lib/data/getGithubRepositories";
-import { projectsText } from "../../../lib/data/strings";
-import SocialMediaButton from "@/components/socialMediaButton";
+import { projectsText } from "../../../lib/data/strings";;
 import socialMedia from "../../../lib/data/socialMedia";
 import { Main } from "@/components/main";
 import SocialMedia from "@/components/socialMedia/socialMedia";
+import Footer from "@/components/footer";
 
 type Props = {
   repositories: GithubRepository[];
@@ -43,6 +43,7 @@ const Projects = ({ repositories }: Props) => {
           </Box>
         </Main>
       </Container>
+      <Footer />
     </>
   );
 };

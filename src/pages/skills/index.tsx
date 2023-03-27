@@ -11,6 +11,7 @@ import getGithubRepositories from "../../../lib/data/getGithubRepositories";
 import socialMedia from "../../../lib/data/socialMedia";
 import { skillText } from "../../../lib/data/strings";
 import metrics from "../../../lib/data/metrics";
+import Footer from "@/components/footer";
 
 const Skills = () => {
   return (
@@ -43,6 +44,7 @@ const Skills = () => {
           </Box>
         </Main>
       </Container>
+      <Footer />
     </>
   );
 };

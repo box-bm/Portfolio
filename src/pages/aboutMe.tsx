@@ -7,6 +7,7 @@ import { Main } from "@/components/main";
 
 import socialMedia from "../../lib/data/socialMedia";
 import { aboutMeText, goalsText, hobbiesText } from "../../lib/data/strings";
+import Footer from "@/components/footer";
 
 const AboutMe = () => {
   return (
@@ -41,6 +42,7 @@ const AboutMe = () => {
           </Box>
         </Main>
       </Container>
+      <Footer />
     </>
   );
 };

@@ -10,6 +10,7 @@ import { Box } from "@/components/box";
 import ViewMoreButton from "@/components/buttons/viewMoreButton";
 import { useRouter } from "next/router";
 import { Main } from "@/components/main";
+import Footer from "@/components/footer";
 
 export default function Home() {
   const router = useRouter();
@@ -57,6 +58,7 @@ export default function Home() {
           </Box>
         </Main>
       </Container>
+      <Footer />
     </>
   );
 }
