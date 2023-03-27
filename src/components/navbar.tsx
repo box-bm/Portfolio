@@ -5,17 +5,11 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "./box";
 import Link from "next/link";
+import { sites } from "../../lib/data/sites";
 
 const externalSites = socialMedia
   .filter(({ code }) => ["github", "blog"].includes(code))
   .map(({ name, url, icon }) => ({ name, path: url, icon }));
-
-const sites = [
-  { path: "/aboutMe", name: "About Me" },
-  { path: "/skills", name: "Skills" },
-  { path: "/projects", name: "Projects" },
-  { path: "/contact", name: "Contact" },
-];
 
 const Navbar = () => {
   const { asPath } = useRouter();

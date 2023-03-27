@@ -13,8 +13,8 @@ const NameTitle = () => {
         css={{
           lineHeight: 1,
           textGradient: `45deg, ${theme!.colors.primary.value} 0%, ${
-            theme!.colors.secondary.value
-          } 50%`,
+            theme!.colors.success.value
+          } 90%`,
         }}
         weight="bold"
       >
