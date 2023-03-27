@@ -12,3 +12,18 @@ export const projectsText =
 
 export const skillText =
   "I am a skilled software developer with a passion for creating intuitive and user-friendly software solutions 🖥️. With extensive experience in front-end 🖌️ and back-end ⚙️ development, database management 🗂️, and software testing, I am well-equipped to develop robust and functional web applications 🌐 , mobile apps 📱, and software solutions.\nI am committed to providing my clients with personalized and high-quality services that meet their unique needs. Whether you need a custom-built software solution or a simple mobile app, I am dedicated to delivering projects that exceed expectations. Please take a moment to browse through my portfolio to see examples of my work, and feel free to contact me to discuss your project requirements. Thank you for visiting, and I look forward to working with you!";
+
+export const contactText =
+  "Thank you for your interest in my services! If you have any questions or would like to discuss your project requirements, please don't hesitate to contact me at brandong.manzog@gmail.com. You can also connect with me on social media to stay up-to-date on my latest projects and industry insights.";
+
+export const contactLinkedIn =
+  "Follow me on LinkedIn to see my professional profile and network with me ";
+
+export const contactTwitter =
+  "For the latest news and updates, follow me on Twitter as ";
+
+export const contactInstagram =
+  "And for a behind-the-scenes look at my work and life, follow me on Instagram ";
+
+export const endContactText =
+  "I am committed to providing my clients with personalized and high-quality services, and I look forward to connecting with you on social media. So please, send me an email or connect with me on social media, and let's get started on your next project today!";

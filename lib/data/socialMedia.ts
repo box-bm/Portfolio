@@ -23,19 +23,19 @@ const socialMedia: SocialMedia[] = [
     color: "#0072b1",
   },
   {
+    code: "instagram",
+    url: "https://www.instagram.com/bgmanzo/",
+    name: "Instagram",
+    icon: faInstagram,
+    color: "#fa7e1e",
+    hideOnHeading: true,
+  },
+  {
     code: "twitter",
     url: "https://twitter.com/BoxBMG/",
     name: "Twitter",
     icon: faTwitter,
     color: "#00acee",
-  },
-  {
-    code: "instagram",
-    url: "https://www.instagram.com/bgmanzo/",
-    name: "Instagram",
-    icon: faInstagram,
-    color: "#4c68d7",
-    hideOnHeading: true,
   },
   {
     code: "blog",
