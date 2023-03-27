@@ -1,6 +1,6 @@
 import { Button } from "@nextui-org/react";
-import SocialMedia from "../../lib/models/socialMedia";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SocialMedia from "../../../lib/models/socialMedia";
 
 type Props = {
   socialMedia: SocialMedia;

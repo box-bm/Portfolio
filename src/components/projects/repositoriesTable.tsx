@@ -8,7 +8,7 @@ import {
   Tooltip,
   Text,
 } from "@nextui-org/react";
-import { IconButton } from "../iconButton";
+import { IconButton } from "../buttons/iconButton";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";

@@ -2,13 +2,14 @@ import { Box } from "@/components/box";
 import Navbar from "@/components/navbar";
 import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
-import getGithubRepositories from "../../../lib/data/getGithubRepositories";
-import SocialMediaButton from "@/components/socialMediaButton";
+import SocialMediaButton from "@/components/buttons/socialMediaButton";
 import SkillsData from "@/components/skills";
-import socialMedia from "../../../lib/data/socialMedia";
-import { skillText } from "../../../lib/data/strings";
 import { Main } from "@/components/main";
 import Metrics from "@/components/aboutMe/metrics";
+
+import getGithubRepositories from "../../../lib/data/getGithubRepositories";
+import socialMedia from "../../../lib/data/socialMedia";
+import { skillText } from "../../../lib/data/strings";
 import metrics from "../../../lib/data/metrics";
 
 const Skills = () => {

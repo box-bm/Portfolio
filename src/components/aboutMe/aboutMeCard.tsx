@@ -1,7 +1,7 @@
 import { aboutMeText } from "../../../lib/data/strings";
 import { Button, Card, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
-import ViewMoreButton from "../viewMoreButton";
+import ViewMoreButton from "@/components/buttons/viewMoreButton";
 
 const AboutMeCard = () => {
   const router = useRouter();

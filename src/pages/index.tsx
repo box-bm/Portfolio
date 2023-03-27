@@ -7,7 +7,7 @@ import Presentation from "@/components/presentation";
 import AboutMe from "@/components/aboutMe";
 import Skills from "@/components/skills";
 import { Box } from "@/components/box";
-import ViewMoreButton from "@/components/viewMoreButton";
+import ViewMoreButton from "@/components/buttons/viewMoreButton";
 import { useRouter } from "next/router";
 import { Main } from "@/components/main";
 

@@ -17,19 +17,19 @@ const metrics: Metric[] = [
   {
     number: "12+",
     title: "Websites",
-    description: "Builded working",
+    description: "Builded and working",
     showHome: true,
-  },
-  {
-    number: "100%",
-    title: "Efficient",
-    description: "Working at time",
-    showHome: false,
   },
   {
     number: "10",
     title: "Designs",
     description: "Beatifuls and clean",
+    showHome: false,
+  },
+  {
+    number: "100%",
+    title: "Efficient",
+    description: "Working at time",
     showHome: false,
   },
 ];

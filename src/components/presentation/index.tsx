@@ -9,7 +9,7 @@ const Presentation = () => {
   return (
     <Section
       css={{
-        height: "65vh",
+        minHeight: "63vh",
         overflow: "hidden",
         display: "flex",
         justifyContent: "space-between",
@@ -17,7 +17,6 @@ const Presentation = () => {
         "@xsMax": {
           flexDirection: "column",
           justifyContent: "center",
-          marginTop: 60,
         },
       }}
     >

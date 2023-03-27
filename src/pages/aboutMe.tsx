@@ -2,10 +2,11 @@ import { Box } from "@/components/box";
 import Navbar from "@/components/navbar";
 import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
-import socialMedia from "../../lib/data/socialMedia";
-import { aboutMeText, goalsText, hobbiesText } from "../../lib/data/strings";
 import SocialMedia from "@/components/socialMedia/socialMedia";
 import { Main } from "@/components/main";
+
+import socialMedia from "../../lib/data/socialMedia";
+import { aboutMeText, goalsText, hobbiesText } from "../../lib/data/strings";
 
 const AboutMe = () => {
   return (

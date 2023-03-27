@@ -1,6 +1,6 @@
-import { Box } from "../box";
+import { Box } from "@/components/box";
 import SocialMediaModel from "../../../lib/models/socialMedia";
-import SocialMediaButton from "../socialMediaButton";
+import SocialMediaButton from "@/components/buttons/socialMediaButton";
 
 type Props = {
   socialMedia: SocialMediaModel[];
