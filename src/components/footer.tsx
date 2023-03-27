@@ -1,11 +1,12 @@
 import { Card, Grid, Text } from "@nextui-org/react";
 import { Box } from "./box";
-import { sites } from "../../lib/data/sites";
 import Link from "next/link";
-import socialMedia from "../../lib/data/socialMedia";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SitesProps from "../../lib/models/navbarProps";
 
-const Footer = () => {
+type Props = SitesProps;
+
+const Footer = ({ socialMedia, sites }: Props) => {
   return (
     <footer>
       <Card css={{ borderRadius: 0 }} variant="flat">
@@ -22,9 +23,7 @@ const Footer = () => {
                     Bill Gates
                   </Text>
                 </Text>
-                <Text>
-
-                </Text>
+                <Text></Text>
               </Box>
             </Grid>
             <Grid xs={12} md={3}>
@@ -43,14 +42,14 @@ const Footer = () => {
               <Box css={{ padding: "10px 12px" }}>
                 <Text h4>Social Media</Text>
                 <ul>
-                  {socialMedia.map(({ name, url, icon }) => (
+                  {socialMedia.map(({ name, path, icon }) => (
                     <li key={name}>
                       <Link
-                        href={url}
+                        href={path}
                         style={{ display: "flex", columnGap: 10 }}
                         target="_blank"
                       >
-                        <FontAwesomeIcon icon={icon} />
+                        {icon && <FontAwesomeIcon icon={icon} />}
                         {name}
                       </Link>
                     </li>

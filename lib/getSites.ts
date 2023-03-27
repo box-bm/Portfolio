@@ -1,9 +1,9 @@
 import { sites } from "./data/sites";
 import socialMedia from "./data/socialMedia";
-import NavbarProps from "./models/navbarProps";
+import SitesProps from "./models/navbarProps";
 import Site from "./models/site";
 
-export function getNavbarSites(): NavbarProps {
+export function getSites(): SitesProps {
   const externalSites: Site[] = socialMedia
     .filter(({ code }) => ["github", "blog"].includes(code))
     .map(({ name, url, icon }) => ({ name, path: url, icon }));
@@ -11,5 +11,10 @@ export function getNavbarSites(): NavbarProps {
   return {
     externalSites,
     sites,
+    socialMedia: socialMedia.map(({ name, url, icon }) => ({
+      name,
+      path: url,
+      icon,
+    })),
   };
 }

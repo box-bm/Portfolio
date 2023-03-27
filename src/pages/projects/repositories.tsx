@@ -5,8 +5,15 @@ import Head from "next/head";
 import { Box } from "@/components/box";
 import SocialMediaButton from "@/components/buttons/socialMediaButton";
 import socialMedia from "../../../lib/data/socialMedia";
+import { getSites } from "../../../lib/getSites";
+import SitesProps from "../../../lib/models/navbarProps";
+import Footer from "@/components/footer";
 
-const Repositories = () => {
+type Props = {
+  sites: SitesProps;
+};
+
+const Repositories = ({ sites }: Props) => {
   return (
     <>
       <Head>
@@ -15,7 +22,7 @@ const Repositories = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Container>
-        <Navbar />
+        <Navbar {...sites} />
         <main style={{ paddingTop: 100 }}>
           <Text h2>Repositories</Text>
 
@@ -29,8 +36,18 @@ const Repositories = () => {
           </Box>
         </main>
       </Container>
+      <Footer {...sites} />
     </>
   );
 };
+
+export async function getStaticProps() {
+  const sites = getSites();
+  return {
+    props: {
+      sites,
+    },
+  };
+}
 
 export default Repositories;

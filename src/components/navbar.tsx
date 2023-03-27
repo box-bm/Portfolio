@@ -5,9 +5,9 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "./box";
 import Link from "next/link";
-import NavbarProps from "../../lib/models/navbarProps";
+import SitesProps from "../../lib/models/navbarProps";
 
-type Props = NavbarProps;
+type Props = SitesProps;
 
 const Navbar = ({ externalSites, sites }: Props) => {
   const { asPath } = useRouter();

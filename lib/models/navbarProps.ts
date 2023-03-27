@@ -1,6 +1,7 @@
 import Site from "./site";
 
-export default interface NavbarProps {
+export default interface SitesProps {
   externalSites: Site[];
   sites: Site[];
+  socialMedia: Site[];
 }
