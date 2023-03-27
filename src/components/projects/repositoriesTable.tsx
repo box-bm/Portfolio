@@ -12,15 +12,18 @@ import { IconButton } from "../buttons/iconButton";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { Box } from "../box";
+import { Box } from "@/components/box";
+import useSWR from "swr";
+import { githubRepositories } from "../../../lib/endpoints";
+import { fetcher } from "../../../lib/utils/fetcher";
 
-type Props = {
-  repositories: GithubRepository[];
-};
-
-const RepositoriesTable = ({ repositories }: Props) => {
+const RepositoriesTable = () => {
+  const { data, isLoading } = useSWR<GithubRepository[]>(
+    githubRepositories,
+    fetcher
+  );
   const [filterValue, setFilterValue] = useState("");
-  const [repos, setRepos] = useState(repositories);
+  const [repos, setRepos] = useState(data);
 
   const onClickAction = (url: string) => {
     window.open(url);
@@ -29,7 +32,7 @@ const RepositoriesTable = ({ repositories }: Props) => {
   useEffect(() => {
     if (filterValue) {
       setRepos(
-        repositories.filter(
+        data?.filter(
           (repo) =>
             repo.name?.toLowerCase().includes(filterValue.toLowerCase()) ||
             repo.description
@@ -39,12 +42,12 @@ const RepositoriesTable = ({ repositories }: Props) => {
               ?.join("|")
               .toLowerCase()
               .includes(filterValue.toLowerCase())
-        )
+        ) ?? []
       );
     } else {
-      setRepos(repositories);
+      setRepos(data ?? []);
     }
-  }, [filterValue]);
+  }, [filterValue, data]);
 
   return (
     <>
@@ -72,7 +75,10 @@ const RepositoriesTable = ({ repositories }: Props) => {
           <Table.Column>Tags</Table.Column>
           <Table.Column>Access</Table.Column>
         </Table.Header>
-        <Table.Body items={repos}>
+        <Table.Body
+          items={repos}
+          loadingState={isLoading ? "loading" : undefined}
+        >
           {(repos ?? []).map((repository) => (
             <Table.Row key={`repo_${repository.id}`}>
               <Table.Cell>
