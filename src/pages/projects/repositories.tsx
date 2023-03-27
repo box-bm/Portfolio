@@ -4,7 +4,7 @@ import { Container, Text } from "@nextui-org/react";
 import Head from "next/head";
 import getGithubRepositories from "../../../lib/data/getGithubRepositories";
 import { Box } from "@/components/box";
-import SocialMediaButton from "@/components/socialMediaButton";
+import SocialMediaButton from "@/components/buttons/socialMediaButton";
 import socialMedia from "../../../lib/data/socialMedia";
 
 type Props = {
