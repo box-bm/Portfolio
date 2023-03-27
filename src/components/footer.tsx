@@ -1,8 +1,8 @@
 import { Card, Grid, Text } from "@nextui-org/react";
-import { Box } from "./box";
+import { Box } from "@/components/box";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import SitesProps from "../../lib/models/navbarProps";
+import SitesProps from "../../lib/models/sitesProps";
 
 type Props = SitesProps;
 
@@ -42,10 +42,10 @@ const Footer = ({ socialMedia, sites }: Props) => {
               <Box css={{ padding: "10px 12px" }}>
                 <Text h4>Social Media</Text>
                 <ul>
-                  {socialMedia.map(({ name, path, icon }) => (
+                  {socialMedia.map(({ name, url, icon }) => (
                     <li key={name}>
                       <Link
-                        href={path}
+                        href={url}
                         style={{ display: "flex", columnGap: 10 }}
                         target="_blank"
                       >

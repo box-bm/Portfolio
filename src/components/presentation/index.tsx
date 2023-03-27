@@ -3,9 +3,13 @@ import SocialMedia from "../socialMedia/socialMedia";
 import ProfilePicture from "./profilePicture";
 import NameTitle from "./nameTitle";
 import { Section } from "../section";
-import socialMedia from "../../../lib/data/socialMedia";
+import SocialMediaModel from "../../../lib/models/socialMedia";
 
-const Presentation = () => {
+type Props = {
+  socialMedia: SocialMediaModel[]
+}
+
+const Presentation = ({socialMedia}: Props) => {
   return (
     <Section
       css={{

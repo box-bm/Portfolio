@@ -1,5 +1,3 @@
-"use client";
-
 import Head from "next/head";
 import { Container, Text } from "@nextui-org/react";
 import Navbar from "@/components/navbar";
@@ -12,13 +10,16 @@ import { useRouter } from "next/router";
 import { Main } from "@/components/main";
 import Footer from "@/components/footer";
 import { getSites } from "../../lib/getSites";
-import SitesProps from "../../lib/models/navbarProps";
+import SitesProps from "../../lib/models/sitesProps";
+import metrics from "../../lib/data/metrics";
+import Metric from "../../lib/models/metric";
 
 type Props = {
   sites: SitesProps;
+  metrics: Metric[];
 };
 
-export default function Home({ sites }: Props) {
+export default function Home({ sites, metrics }: Props) {
   const router = useRouter();
 
   return (
@@ -32,8 +33,8 @@ export default function Home({ sites }: Props) {
       <Navbar {...sites} />
       <Container>
         <Main>
-          <Presentation />
-          <AboutMe />
+          <Presentation socialMedia={sites.socialMedia} />
+          <AboutMe metrics={metrics} />
           <Box
             css={{
               display: "flex",
@@ -71,9 +72,11 @@ export default function Home({ sites }: Props) {
 
 export async function getStaticProps() {
   const sites = getSites();
+
   return {
     props: {
       sites,
+      metrics: metrics.filter((metric) => metric.showHome),
     },
   };
 }

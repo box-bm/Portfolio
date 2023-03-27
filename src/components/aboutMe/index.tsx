@@ -1,10 +1,12 @@
 import AboutMeCard from "./aboutMeCard";
 import { Section } from "../section";
-import metrics from "../../../lib/data/metrics";
+import Metric from "../../../lib/models/metric";
 import Metrics from "./metrics";
 import { Box } from "../box";
 
-const AboutMe = () => {
+type Props = { metrics: Metric[] };
+
+const AboutMe = ({ metrics }: Props) => {
   return (
     <Section
       css={{
@@ -20,8 +22,8 @@ const AboutMe = () => {
       }}
     >
       <AboutMeCard />
-      <Box css={{ maxWidth: 720, width: "100%", }}>
-        <Metrics metrics={metrics.filter((metric) => metric.showHome)} />
+      <Box css={{ maxWidth: 720, width: "100%" }}>
+        <Metrics metrics={metrics} />
       </Box>
     </Section>
   );

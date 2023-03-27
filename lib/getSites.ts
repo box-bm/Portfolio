@@ -1,6 +1,6 @@
 import { sites } from "./data/sites";
 import socialMedia from "./data/socialMedia";
-import SitesProps from "./models/navbarProps";
+import SitesProps from "./models/sitesProps";
 import Site from "./models/site";
 
 export function getSites(): SitesProps {
@@ -11,10 +11,6 @@ export function getSites(): SitesProps {
   return {
     externalSites,
     sites,
-    socialMedia: socialMedia.map(({ name, url, icon }) => ({
-      name,
-      path: url,
-      icon,
-    })),
+    socialMedia: socialMedia,
   };
 }

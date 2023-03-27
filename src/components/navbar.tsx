@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "./box";
 import Link from "next/link";
-import SitesProps from "../../lib/models/navbarProps";
+import SitesProps from "../../lib/models/sitesProps";
 
 type Props = SitesProps;
 
