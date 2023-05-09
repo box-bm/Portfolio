@@ -1,6 +1,7 @@
-import { Container } from "@nextui-org/react";
+import { Container, Text } from "@nextui-org/react";
 import Head from "next/head";
 import { Main } from "@/components/main";
+import Link from "next/link";
 
 const Policies = () => {
   return (
@@ -11,7 +12,14 @@ const Policies = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Container>
-        <Main>Politics</Main>
+        <Main>
+          <Text h2 css={{ margin: 0 }}>
+            Politics
+          </Text>
+          <Link href="/privacyPolicies/minimalTicTacToe">
+            Minimal Tik Tak Toe
+          </Link>
+        </Main>
       </Container>
     </>
   );
