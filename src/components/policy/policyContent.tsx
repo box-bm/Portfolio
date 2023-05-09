@@ -1,6 +1,6 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
-import styles from "./policy.module.css";
+import { Link } from "@nextui-org/react";
 
 interface Props {
   content: string;
@@ -12,13 +12,9 @@ const PolicyContent = ({ content }: Props) => {
       children={content}
       linkTarget="_blank"
       components={{
-        a: ({ children, node, href, ...props }) => (
-          <a className={styles.link} href={href} {...props}>
-            {children}
-          </a>
-        ),
+        a: ({ children, href }) => <Link href={href}>{children}</Link>,
       }}
-      // remarkPlugins={[remarkGfm]}
+      remarkPlugins={[remarkGfm]}
     />
   );
 };
