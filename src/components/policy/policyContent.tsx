@@ -10,14 +10,15 @@ const PolicyContent = ({ content }: Props) => {
   return (
     <ReactMarkdown
       children={content}
+      linkTarget="_blank"
       components={{
-        a: ({ children, node, ...props }) => (
-          <a {...props} className={styles.link}>
+        a: ({ children, node, href, ...props }) => (
+          <a className={styles.link} href={href} {...props}>
             {children}
           </a>
         ),
       }}
-      remarkPlugins={[remarkGfm]}
+      // remarkPlugins={[remarkGfm]}
     />
   );
 };

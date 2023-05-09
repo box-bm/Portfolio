@@ -29,9 +29,19 @@ const TicTactToe = ({ politic }: Props) => {
 export async function getStaticProps() {
   const fileContents = readFiles("/static/ticTacToePolicy.md");
 
-  const content = fileContents.replaceAll(
+  var content = fileContents.replaceAll(
     "[contact]",
-    '[brandong.manzog@gmail.com]("mailto:brandong.manzog@gmail.com")'
+    "[brandong.manzog@gmail.com](mailto:brandong.manzog@gmail.com)"
+  );
+
+  content = content.replaceAll(
+    "[adMobPrivacyPolicyLink]",
+    "[AdMob Privacy Policy](https://policies.google.com/privacy)"
+  );
+
+  content = content.replaceAll(
+    "[website]",
+    "[brandonmanzo.dev](https://www.brandonmanzo.dev/contact)"
   );
 
   return {
