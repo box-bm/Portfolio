@@ -10,7 +10,7 @@ const Frameworks = () => {
       description="Some frameworks what I use in my career. Powerful tools to transform ideas to a real product"
     >
       {frameworks.map((framework) => (
-        <Framework framework={framework} />
+        <Framework key={framework.code} framework={framework} />
       ))}
     </SkillCard>
   );

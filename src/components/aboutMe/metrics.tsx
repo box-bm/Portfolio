@@ -23,6 +23,7 @@ const Metrics = ({ metrics }: Props) => {
     >
       {metrics.map((metric) => (
         <Metric
+          key={metric.title}
           number={metric.number}
           title={metric.title}
           description={metric.description}
