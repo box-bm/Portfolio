@@ -11,7 +11,7 @@ const Tools = () => {
       description="I every day use this tools to write and build code. Or somethimes to do other else"
     >
       {tools.map((tool) => (
-        <Tool tool={tool} />
+        <Tool key={tool.code} tool={tool} />
       ))}
     </SkillCard>
   );

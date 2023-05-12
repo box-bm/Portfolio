@@ -8,8 +8,8 @@ const languages: Language[] = [
   },
   {
     name: "English",
-    description: "B1",
-    percent: 0.33,
+    description: "B2",
+    percent: 0.5,
   },
 ];
 
