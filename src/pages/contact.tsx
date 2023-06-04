@@ -38,7 +38,7 @@ const AboutMe = ({ sites }: Props) => {
           <Text>
             Thank you for your interest in my services! If you have any
             questions or would like to discuss your project requirements, please
-            don't hesitate to contact me at{" "}
+            don&apos;t hesitate to contact me at{" "}
             <Link href="mailto: brandong.manzog@gmail.com">
               <Text b>brandong.manzog@gmail.com</Text>
             </Link>

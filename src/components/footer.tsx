@@ -16,8 +16,8 @@ const Footer = ({ socialMedia, sites }: Props) => {
               <Box css={{ padding: "10px 12px" }}>
                 <Text h3>Box BM Web site</Text>
                 <Text blockquote>
-                  "Measuring programming progress by lines of code is like
-                  measure the progress of aircraft construction by weight."
+                  &quot;Measuring programming progress by lines of code is like
+                  measure the progress of aircraft construction by weight.&quot;
                   <br />
                   <Text b span>
                     Bill Gates
