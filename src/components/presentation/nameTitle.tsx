@@ -6,7 +6,7 @@ const NameTitle = () => {
 
   return (
     <Box>
-      <Text h4>Hello everyone, I'm</Text>
+      <Text h4>Hello everyone, I&apos;m</Text>
       <Text
         h1
         size={60}

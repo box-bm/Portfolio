@@ -9,13 +9,14 @@ interface Props {
 const PolicyContent = ({ content }: Props) => {
   return (
     <ReactMarkdown
-      children={content}
       linkTarget="_blank"
       components={{
         a: ({ children, href }) => <Link href={href}>{children}</Link>,
       }}
       remarkPlugins={[remarkGfm]}
-    />
+    >
+      {content}
+    </ReactMarkdown>
   );
 };
 export default PolicyContent;
