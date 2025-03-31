@@ -1,4 +1,4 @@
-import { Container } from "@nextui-org/react";
+import { Container } from "@heroui/react";
 import Head from "next/head";
 import { Main } from "@/components/main";
 import PoliticsProps from "../../../lib/models/politicsProps";

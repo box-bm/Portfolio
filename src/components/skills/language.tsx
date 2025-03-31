@@ -1,4 +1,4 @@
-import { Progress, Text } from "@nextui-org/react";
+import { Progress } from "@heroui/react";
 import LanguageModel from "../../../lib/models/language";
 import { Box } from "../box";
 
@@ -12,14 +12,14 @@ const Language = ({ language }: Props) => {
   return (
     <>
       <Box>
-        <Text b span>
+        <span className="font-bold">
           {name}{" "}
-        </Text>
-        <Text span css={{ fontWeight: "$light" }}>
+        </span>
+        <span className="font-light">
           {description}
-        </Text>
+        </span>
       </Box>
-      <Progress color="primary" shadow size="sm" value={percent * 100} />
+      <Progress color="primary" size="sm" value={percent * 100} />
     </>
   );
 };

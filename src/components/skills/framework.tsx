@@ -1,14 +1,14 @@
-import { Text, Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { Box } from "../box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Framework from "../../../lib/models/framework";
+import type Framework from "../../../lib/models/framework";
 
 type Props = {
   framework: Framework;
 };
 
 const Framework = ({ framework }: Props) => {
-  const { icon, title, description } = framework;
+  const { icon, title } = framework;
   return (
     <Box
       css={{
@@ -23,12 +23,12 @@ const Framework = ({ framework }: Props) => {
           alt={title}
           width={20}
           height={20}
-          containerCss={{ margin: 0, marginRight: 10 }}
+          className="mr-2"
         />
       ) : (
         <FontAwesomeIcon icon={icon} />
       )}
-      <Text>{title}</Text>
+      <p>{title}</p>
     </Box>
   );
 };

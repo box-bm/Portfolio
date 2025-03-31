@@ -1,12 +1,10 @@
 import { Box } from "@/components/box";
 import Navbar from "@/components/navbar";
-import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
 import SocialMediaButton from "@/components/buttons/socialMediaButton";
 import SkillsData from "@/components/skills";
 import { Main } from "@/components/main";
 import Metrics from "@/components/aboutMe/metrics";
-import socialMedia from "../../../lib/data/socialMedia";
 import { skillText } from "../../../lib/data/strings";
 import metrics from "../../../lib/data/metrics";
 import Footer from "@/components/footer";
@@ -28,28 +26,24 @@ const Skills = ({ sites, metrics }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar {...sites} />
-      <Container>
-        <Main>
-          <Text h2 css={{ margin: 0 }}>
-            Skills
-          </Text>
-          <Divider css={{ marginBottom: 10 }} />
-          <Text>{skillText}</Text>
-          <Box css={{ marginTop: 20 }}>
-            <SocialMediaButton
-              socialMedia={
-                sites.socialMedia.find((social) => social.code === "linkedin")!
-              }
-            />
-          </Box>
-          <Box css={{ marginTop: 20 }}>
-            <Metrics metrics={metrics} />
-          </Box>
-          <Box css={{ marginTop: 20 }}>
-            <SkillsData />
-          </Box>
-        </Main>
-      </Container>
+      <Main>
+        <h2 className="text-2xl font-bold m-0">Skills</h2>
+        <hr className="my-2 border-gray-300" />
+        <p className="text-base">{skillText}</p>
+        <Box className="mt-5">
+          <SocialMediaButton
+            socialMedia={
+              sites.socialMedia.find((social) => social.code === "linkedin")!
+            }
+          />
+        </Box>
+        <Box className="mt-5">
+          <Metrics metrics={metrics} />
+        </Box>
+        <Box className="mt-5">
+          <SkillsData />
+        </Box>
+      </Main>
       <Footer {...sites} />
     </>
   );

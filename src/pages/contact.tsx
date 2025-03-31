@@ -1,6 +1,5 @@
 import { Box } from "@/components/box";
 import Navbar from "@/components/navbar";
-import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
 import SocialMedia from "@/components/socialMedia/socialMedia";
 import { Main } from "@/components/main";
@@ -29,70 +28,63 @@ const AboutMe = ({ sites }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar {...sites} />
-      <Container>
-        <Main>
-          <Text h2 css={{ margin: 0 }}>
-            Contact
-          </Text>
-          <Divider css={{ marginBottom: 10 }} />
-          <Text>
-            Thank you for your interest in my services! If you have any
-            questions or would like to discuss your project requirements, please
-            don&apos;t hesitate to contact me at{" "}
-            <Link href="mailto: brandong.manzog@gmail.com">
-              <Text b>brandong.manzog@gmail.com</Text>
-            </Link>
-            . You can also connect with me on social media to stay up-to-date on
-            my latest projects and industry insights.
-          </Text>
-          <br />
-          <Text>
-            {contactLinkedIn}
-            <Link
-              href={
-                socialMedia.find((social) => social.code === "linkedin")?.url!
-              }
-              target="_blank"
-              style={{ fontWeight: "bold" }}
-            >
-              Brandon Manzo
-            </Link>
-          </Text>
-          <br />
-          <Text>
-            {contactTwitter}
-            <Link
-              href={
-                socialMedia.find((social) => social.code === "twitter")?.url!
-              }
-              target="_blank"
-              style={{ fontWeight: "bold" }}
-            >
-              @BoxBMG
-            </Link>
-          </Text>
-          <br />
-          <Text>
-            {contactInstagram}
-            <Link
-              href={
-                socialMedia.find((social) => social.code === "instagram")?.url!
-              }
-              target="_blank"
-              style={{ fontWeight: "bold" }}
-            >
-              @bgManzo
-            </Link>
-          </Text>
-          <Box css={{ marginTop: 20 }}>
-            <SocialMedia
-              socialMedia={sites.socialMedia.filter((social) =>
-                ["twitter", "instagram", "linkedin"].includes(social.code)
-              )}
-            />
-          </Box>
-        </Main>
-      </Container>
+      <Main>
+        <h2 className="text-2xl font-bold mb-4">Contact</h2>
+        <hr className="border-gray-300 mb-4" />
+        <p className="mb-4">
+          Thank you for your interest in my services! If you have any questions
+          or would like to discuss your project requirements, please don&apos;t
+          hesitate to contact me at{" "}
+          <Link href="mailto: brandong.manzog@gmail.com">
+            <span className="font-bold">brandong.manzog@gmail.com</span>
+          </Link>
+          . You can also connect with me on social media to stay up-to-date on
+          my latest projects and industry insights.
+        </p>
+        <p className="mb-4">
+          {contactLinkedIn}
+          <Link
+            href={
+              socialMedia.find((social) => social.code === "linkedin")?.url!
+            }
+            target="_blank"
+            className="font-bold"
+          >
+            Brandon Manzo
+          </Link>
+        </p>
+        <p className="mb-4">
+          {contactTwitter}
+          <Link
+            href={
+              socialMedia.find((social) => social.code === "twitter")?.url!
+            }
+            target="_blank"
+            className="font-bold"
+          >
+            @BoxBMG
+          </Link>
+        </p>
+        <p className="mb-4">
+          {contactInstagram}
+          <Link
+            href={
+              socialMedia.find((social) => social.code === "instagram")?.url!
+            }
+            target="_blank"
+            className="font-bold"
+          >
+            @bgManzo
+          </Link>
+        </p>
+        <Box className="mt-5">
+          <SocialMedia
+            socialMedia={sites.socialMedia.filter((social) =>
+              ["twitter", "instagram", "linkedin"].includes(social.code)
+            )}
+          />
+        </Box>
+      </Main>
       <Footer {...sites} />
     </>
   );

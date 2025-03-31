@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import RepositoriesTable from "@/components/projects/repositoriesTable";
-import { Container, Text } from "@nextui-org/react";
+import { Container, Text } from "@heroui/react";
 import Head from "next/head";
 import { Box } from "@/components/box";
 import SocialMediaButton from "@/components/buttons/socialMediaButton";

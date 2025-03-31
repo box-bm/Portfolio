@@ -1,58 +1,62 @@
 import {
   Divider,
-  Navbar as NextNavbar,
-  Text,
-  useTheme,
-} from "@nextui-org/react";
-import { useRef } from "react";
-import socialMedia from "../../lib/data/socialMedia";
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenu,
+  NavbarMenuItem,
+  NavbarMenuToggle,
+  Navbar as HeroNavbar,
+} from "@heroui/react";
+import { useRef, useState } from "react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box } from "./box";
 import Link from "next/link";
 import SitesProps from "../../lib/models/sitesProps";
-import Image from "next/image";
 
 type Props = SitesProps;
 
 const Navbar = ({ externalSites, sites }: Props) => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { asPath } = useRouter();
   const navbarToggleRef = useRef<HTMLButtonElement>(null);
-  const theme = useTheme();
+
 
   return (
-    <NextNavbar
-      isBordered
-      borderWeight="normal"
-      variant="floating"
-      css={{ position: "fixed", zIndex: 99999 }}
+    <HeroNavbar
+      position="static"
+      className="space-y-4"
+      onMenuOpenChange={setIsMenuOpen}
     >
-      <NextNavbar.Brand>
-        <NextNavbar.Toggle showIn="xs" ref={navbarToggleRef} />
-        <Link href="/" style={{ display: "flex" }}>
+      <NavbarMenuToggle className="sm:hidden" />
+      <NavbarBrand>
+        <Link href="/" style={{ display: "flex", alignItems: "center" }}>
           <Image
-            src={theme.isDark ? "/logo_white.png" : "/logo_colour.png"}
+            // src={theme.isDark ? "/logo_white.png" : "/logo_colour.png"}
+            src={"/logo_colour.png"}
             alt="Box-Dev logo"
             width={60}
             height={60}
           />
-          <Text b h4 css={{ margin: 12 }}>
+          <h1 className="text-lg font-bold my-3">
             Box Dev
-          </Text>
+          </h1>
         </Link>
-      </NextNavbar.Brand>
+      </NavbarBrand>
 
-      <NextNavbar.Content enableCursorHighlight hideIn="xs">
+      <NavbarContent justify="center" className="hidden sm:flex gap-4">
         {sites.map((link) => (
-          <NextNavbar.Item key={link.path} isActive={link.path === asPath}>
+          <NavbarItem key={link.path} isActive={link.path === asPath}>
             <Link href={link.path}>{link.name}</Link>
-          </NextNavbar.Item>
+          </NavbarItem>
         ))}
-      </NextNavbar.Content>
-      <NextNavbar.Content enableCursorHighlight hideIn="xs">
+      </NavbarContent>
+      <NavbarContent justify="end" className="hidden sm:flex gap-4">
         {externalSites.map((link) => (
-          <NextNavbar.Item key={link.path}>
-            <Link href={link.path} target="_blank">
+          <NavbarItem key={link.path} >
+            <Link href={link.path} target="_blank" style={{ display: "flex", flexDirection: 'row', alignItems: "center" }}>
               {link.icon && (
                 <Box css={{ marginRight: 5 }} as="span">
                   <FontAwesomeIcon icon={link.icon} />
@@ -60,24 +64,24 @@ const Navbar = ({ externalSites, sites }: Props) => {
               )}
               {link.name}
             </Link>
-          </NextNavbar.Item>
+          </NavbarItem>
         ))}
-      </NextNavbar.Content>
-      <NextNavbar.Collapse>
+      </NavbarContent>
+      <NavbarMenu>
         {sites.map((link) => (
-          <NextNavbar.CollapseItem
+          <NavbarMenuItem
             key={link.path}
             isActive={link.path === asPath}
           >
             <Link href={link.path} color="inherit">
               {link.name}
             </Link>
-          </NextNavbar.CollapseItem>
+          </NavbarMenuItem>
         ))}
-        <Divider css={{ marginBottom: 10 }} />
+        <Divider className="border-b border-gray-300 mb-2" />
         {externalSites.map((link) => (
-          <NextNavbar.CollapseItem key={link.path}>
-            <Link href={link.path} target="_blank">
+          <NavbarMenuItem key={link.path}>
+            <Link href={link.path} target="_blank" style={{ display: "flex", flexDirection: 'row', alignItems: "center" }}>
               {link.icon && (
                 <Box css={{ marginRight: 5 }} as="span">
                   <FontAwesomeIcon icon={link.icon} />
@@ -85,10 +89,10 @@ const Navbar = ({ externalSites, sites }: Props) => {
               )}
               {link.name}
             </Link>
-          </NextNavbar.CollapseItem>
+          </NavbarMenuItem>
         ))}
-      </NextNavbar.Collapse>
-    </NextNavbar>
+      </NavbarMenu>
+    </HeroNavbar>
   );
 };
 

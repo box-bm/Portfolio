@@ -1,5 +1,3 @@
-import { styled } from "@nextui-org/react";
-
-export const Section = styled("section", {
-  boxSizing: "border-box",
-});
+export const Section = ({ css, ...props }: { css?: React.CSSProperties;[key: string]: any }) => (
+  <section style={{ boxSizing: "border-box", ...css }} {...props} />
+);

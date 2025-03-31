@@ -1,6 +1,5 @@
 import { Box } from "@/components/box";
 import Navbar from "@/components/navbar";
-import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
 import SocialMedia from "@/components/socialMedia/socialMedia";
 import { Main } from "@/components/main";
@@ -24,22 +23,20 @@ const AboutMe = ({ sites }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar {...sites} />
-      <Container>
+      <div className="container mx-auto px-4">
         <Main>
-          <Text h2 css={{ margin: 0 }}>
-            About Me
-          </Text>
-          <Divider css={{ marginBottom: 10 }} />
-          <Text>{aboutMeText}</Text>
-          <Box css={{ marginTop: 25 }}>
-            <Text h3>Hobbies</Text>
-            <Text>{hobbiesText}</Text>
+          <h2 className="text-2xl font-bold m-0">About Me</h2>
+          <hr className="my-2 border-gray-300" />
+          <p>{aboutMeText}</p>
+          <Box className="mt-6">
+            <h3 className="text-xl font-semibold">Hobbies</h3>
+            <p>{hobbiesText}</p>
           </Box>
-          <Box css={{ marginTop: 25 }}>
-            <Text h3>Goals</Text>
-            <Text>{goalsText}</Text>
+          <Box className="mt-6">
+            <h3 className="text-xl font-semibold">Goals</h3>
+            <p>{goalsText}</p>
           </Box>
-          <Box css={{ marginTop: 20 }}>
+          <Box className="mt-5">
             <SocialMedia
               socialMedia={sites.socialMedia.filter((social) =>
                 ["twitter", "instagram"].includes(social.code)
@@ -47,7 +44,7 @@ const AboutMe = ({ sites }: Props) => {
             />
           </Box>
         </Main>
-      </Container>
+      </div>
       <Footer {...sites} />
     </>
   );

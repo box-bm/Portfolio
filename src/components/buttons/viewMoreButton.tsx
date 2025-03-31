@@ -1,19 +1,18 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 
 type Props = {
   auto?: boolean;
-  onClick: () => void;
+  onPress: () => void;
 };
 
-const ViewMoreButton = ({ onClick, auto = false }: Props) => {
+const ViewMoreButton = ({ onPress, auto = false }: Props) => {
   return (
     <Button
-      flat
-      auto={auto}
+      variant="flat"
       iconRight={<FontAwesomeIcon icon={faArrowRight} />}
-      onClick={onClick}
+      onPress={onPress}
     >
       View More
     </Button>

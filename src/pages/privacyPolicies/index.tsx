@@ -1,4 +1,4 @@
-import { Container, Text } from "@nextui-org/react";
+import { Container, Text } from "@heroui/react";
 import Head from "next/head";
 import { Main } from "@/components/main";
 import Link from "next/link";

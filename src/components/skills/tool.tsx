@@ -1,4 +1,4 @@
-import { Text, Image } from "@nextui-org/react";
+import { Image } from "@heroui/react";
 import { Box } from "../box";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ToolModel from "../../../lib/models/tool";
@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Tool = ({ tool }: Props) => {
-  const { icon, title, description } = tool;
+  const { icon, title } = tool;
   return (
     <Box
       css={{
@@ -23,12 +23,12 @@ const Tool = ({ tool }: Props) => {
           alt={title}
           width={20}
           height={20}
-          containerCss={{ margin: 0, marginRight: 10 }}
+          className="mr-2"
         />
       ) : (
         <FontAwesomeIcon icon={icon} />
       )}
-      <Text>{title}</Text>
+      <p>{title}</p>
     </Box>
   );
 };

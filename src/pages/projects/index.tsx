@@ -1,7 +1,6 @@
 import { Box } from "@/components/box";
 import Navbar from "@/components/navbar";
 import RepositoriesTable from "@/components/projects/repositoriesTable";
-import { Container, Divider, Text } from "@nextui-org/react";
 import Head from "next/head";
 import { projectsText } from "../../../lib/data/strings";
 import { Main } from "@/components/main";
@@ -23,26 +22,22 @@ const Projects = ({ sites }: Props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Navbar {...sites} />
-      <Container>
-        <Main>
-          <Text h2 css={{ margin: 0 }}>
-            Projects
-          </Text>
-          <Divider css={{ marginBottom: 10 }} />
-          <Text>{projectsText}</Text>
-          <Box css={{ marginTop: 20 }}>
-            <SocialMedia
-              socialMedia={sites.socialMedia.filter((social) =>
-                ["github", "blog"].includes(social.code)
-              )}
-            />
-          </Box>
-          <Box css={{ marginTop: 20 }}>
-            <Text h3>Repositories</Text>
-            <RepositoriesTable />
-          </Box>
-        </Main>
-      </Container>
+      <Main>
+        <h2 className="text-2xl font-bold m-0">Projects</h2>
+        <hr className="border-b border-gray-300 mb-2.5" />
+        <p className="text-base">{projectsText}</p>
+        <Box css={{ marginTop: 20 }}>
+          <SocialMedia
+            socialMedia={sites.socialMedia.filter((social) =>
+              ["github", "blog"].includes(social.code)
+            )}
+          />
+        </Box>
+        <Box css={{ marginTop: 20 }}>
+          <h3 className="text-xl font-semibold">Repositories</h3>
+          <RepositoriesTable />
+        </Box>
+      </Main>
       <Footer {...sites} />
     </>
   );

@@ -1,4 +1,4 @@
-import { Card, Text } from "@nextui-org/react";
+import { Card, CardBody } from "@heroui/react";
 import { Box } from "../box";
 
 type Props = {
@@ -9,14 +9,12 @@ type Props = {
 
 const SkillCard = ({ title, description, children }: Props) => {
   return (
-    <Card variant="flat" borderWeight="bold" css={{ width: "100%" }}>
-      <Card.Body>
-        <Text h3 css={{ margin: 0 }}>
-          {title}
-        </Text>
-        <Text css={{ lineHeight: 1.2 }}>{description}</Text>
-        <Box css={{ marginTop: 16 }}>{children}</Box>
-      </Card.Body>
+    <Card shadow="none" className="w-full border-1 border-gray-200">
+      <CardBody>
+        <h3 className="text-lg font-bold m-0">{title}</h3>
+        <p className="leading-tight text-gray-700">{description}</p>
+        <Box className="mt-4">{children}</Box>
+      </CardBody>
     </Card>
   );
 };

@@ -1,19 +1,21 @@
-import { styled } from '@nextui-org/react';
+import { Button } from "@heroui/react";
 
-export const IconButton = styled('button', {
-  dflex: 'center',
-  border: 'none',
-  outline: 'none',
-  cursor: 'pointer',
-  borderRadius: 100,
-  padding: '4px',
-  margin: '0',
-  bg: 'transparent',
-  transition: '$default',
-  '&:hover': {
-    opacity: '0.8'
-  },
-  '&:active': {
-    opacity: '0.6'
-  }
-});
+export const IconButton = (props) => (
+  <Button
+    isIconOnly
+    variant="ghost"
+    {...props}
+    css={{
+      padding: '4px',
+      margin: '0',
+      borderRadius: 100,
+      transition: '$default',
+      '&:hover': {
+        opacity: '0.8'
+      },
+      '&:active': {
+        opacity: '0.6'
+      }
+    }}
+  />
+);

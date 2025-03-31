@@ -1,6 +1,6 @@
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
 import remarkGfm from "remark-gfm";
-import { Link } from "@nextui-org/react";
+import { Link } from "@heroui/react";
 
 interface Props {
   content: string;

@@ -1,13 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   Badge,
-  Col,
   Input,
-  Row,
   Table,
   Tooltip,
-  Text,
-} from "@nextui-org/react";
+  TableHeader,
+  TableBody,
+  TableRow,
+  TableCell,
+  TableColumn,
+} from "@heroui/react";
 import { IconButton } from "../buttons/iconButton";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
@@ -54,94 +56,71 @@ const RepositoriesTable = () => {
       <Box css={{ marginBottom: 10, marginTop: 26, maxWidth: 400 }}>
         <Input
           placeholder="Search by name or description"
-          labelPlaceholder="Search"
-          clearable
           fullWidth
           onChange={(e) => setFilterValue(e.target.value)}
           value={filterValue}
-          onClearClick={(_e) => setFilterValue("")}
         />
       </Box>
       <Table
-        bordered
-        shadow={false}
-        sticked
-        lined
-        css={{ minWidth: "100%", maxH: "30px" }}
+        className="w-full"
+        aria-label="Repositories"
+        selectionMode="single"
+        selectionBehavior="replace"
       >
-        <Table.Header>
-          <Table.Column>Name</Table.Column>
-          <Table.Column>Description</Table.Column>
-          <Table.Column>Tags</Table.Column>
-          <Table.Column>Access</Table.Column>
-        </Table.Header>
-        <Table.Body
+        <TableHeader>
+          <TableColumn>Name</TableColumn>
+          <TableColumn>Description</TableColumn>
+          <TableColumn>Tags</TableColumn>
+          <TableColumn>Access</TableColumn>
+        </TableHeader>
+        <TableBody
           items={repos}
           loadingState={isLoading ? "loading" : undefined}
         >
           {(repos ?? []).map((repository) => (
-            <Table.Row key={`repo_${repository.id}`}>
-              <Table.Cell>
-                <Text b>{repository.name}</Text>
-              </Table.Cell>
-              <Table.Cell>
-                <Text
-                  css={{
-                    maxWidth: 400,
-                    textOverflow: "ellipsis",
-                    overflow: "hidden",
-                    whiteSpace: "nowrap",
-                  }}
-                >
+            <TableRow key={`repo_${repository.id}`}>
+              <TableCell>
+                <span className="font-bold">{repository.name}</span>
+              </TableCell>
+              <TableCell>
+                <span className="max-w-[400px] text-ellipsis overflow-hidden whitespace-nowrap">
                   {repository.description}
-                </Text>
-              </Table.Cell>
-              <Table.Cell
-                css={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  overflowWrap: "break-word",
-                  rowGap: 3,
-                  columnGap: 2,
-                  minHeight: 50,
-                }}
+                </span>
+              </TableCell>
+              <TableCell
+                className="flex flex-wrap break-words gap-y-1 gap-x-1 min-h-[50px]"
               >
                 {(repository.topics ?? []).map((topic) => (
                   <Badge key={topic} variant="flat">
                     {topic}
                   </Badge>
                 ))}
-              </Table.Cell>
+              </TableCell>
 
-              <Table.Cell>
-                <Row justify="center" align="center" css={{ width: 60 }}>
-                  {repository.html_url && (
-                    <Col>
-                      <Tooltip content="Github">
-                        <IconButton
-                          onClick={() => onClickAction(repository.html_url!)}
-                        >
-                          <FontAwesomeIcon icon={faGithub} />
-                        </IconButton>
-                      </Tooltip>
-                    </Col>
-                  )}
-                  {repository.homepage && (
-                    <Col>
-                      <Tooltip content="WebSite">
-                        <IconButton
-                          onClick={() => onClickAction(repository.homepage!)}
-                        >
-                          <FontAwesomeIcon icon={faGlobe} />
-                        </IconButton>
-                      </Tooltip>
-                    </Col>
-                  )}
-                </Row>
-              </Table.Cell>
-            </Table.Row>
+              <TableCell>
+                {repository.html_url && (
+                  <Tooltip content="Github">
+                    <IconButton
+                      onPress={() => onClickAction(repository.html_url!)}
+                    >
+                      <FontAwesomeIcon icon={faGithub} />
+                    </IconButton>
+                  </Tooltip>
+                )}
+                {repository.homepage && (
+                  <Tooltip content="WebSite">
+                    <IconButton
+                      onPress={() => onClickAction(repository.homepage!)}
+                    >
+                      <FontAwesomeIcon icon={faGlobe} />
+                    </IconButton>
+                  </Tooltip>
+                )}
+
+              </TableCell>
+            </TableRow>
           ))}
-        </Table.Body>
+        </TableBody>
       </Table>
     </>
   );

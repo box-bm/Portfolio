@@ -1,5 +1,5 @@
 import { aboutMeText } from "../../../lib/data/strings";
-import { Button, Card, Text } from "@nextui-org/react";
+import { Card, CardBody, CardFooter } from "@heroui/react";
 import { useRouter } from "next/router";
 import ViewMoreButton from "@/components/buttons/viewMoreButton";
 
@@ -7,14 +7,14 @@ const AboutMeCard = () => {
   const router = useRouter();
 
   return (
-    <Card variant="flat" css={{ maxWidth: 720 }}>
-      <Card.Body>
-        <Text h2>About Me</Text>
-        <Text>{aboutMeText}</Text>
-      </Card.Body>
-      <Card.Footer>
-        <ViewMoreButton onClick={() => router.push("/aboutMe")} />
-      </Card.Footer>
+    <Card shadow="none" className="max-w-3xl border-1 border-gray-200">
+      <CardBody>
+        <h2>About Me</h2>
+        <p>{aboutMeText}</p>
+      </CardBody>
+      <CardFooter>
+        <ViewMoreButton onPress={() => router.push("/aboutMe")} />
+      </CardFooter>
     </Card>
   );
 };

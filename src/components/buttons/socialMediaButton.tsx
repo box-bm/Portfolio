@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SocialMedia from "../../../lib/models/socialMedia";
 
@@ -12,7 +12,7 @@ const SocialMediaButton = ({ socialMedia }: Props) => {
       key={socialMedia.url}
       icon={<FontAwesomeIcon icon={socialMedia.icon} />}
       css={{ backgroundColor: socialMedia.color, minWidth: 150 }}
-      onClick={() => {
+      onPress={() => {
         window.open(socialMedia.url);
       }}
     >

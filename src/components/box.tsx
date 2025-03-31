@@ -1,5 +1,3 @@
-import { styled } from "@nextui-org/react"
-
-export const Box = styled("div", {
-  boxSizing: "border-box",
-});
+export const Box = ({ css, ...props }: { css?: React.CSSProperties;[key: string]: any }) => (
+  <div style={{ boxSizing: "border-box", ...css }} {...props} />
+);

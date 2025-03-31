@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Container, Text } from "@nextui-org/react";
 import Navbar from "@/components/navbar";
 import Presentation from "@/components/presentation";
 import AboutMe from "@/components/aboutMe";
@@ -31,40 +30,37 @@ export default function Home({ sites, metrics }: Props) {
       </Head>
 
       <Navbar {...sites} />
-      <Container>
-        <Main>
-          <Presentation socialMedia={sites.socialMedia} />
-          <AboutMe metrics={metrics} />
+
+      <Main>
+        <Presentation socialMedia={sites.socialMedia} />
+        <AboutMe metrics={metrics} />
+        <Box
+          css={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
           <Box
             css={{
+              marginTop: 20,
               display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
-            <Box
-              css={{
-                marginTop: 20,
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
+            <h2 className="text-2xl font-bold m-0">Skills</h2>
+            <ViewMoreButton
+              auto
+              onPress={() => {
+                router.push("/skills");
               }}
-            >
-              <Text h2 css={{ margin: 0 }}>
-                Skills
-              </Text>
-              <ViewMoreButton
-                auto
-                onClick={() => {
-                  router.push("/skills");
-                }}
-              />
-            </Box>
-
-            <Skills />
+            />
           </Box>
-        </Main>
-      </Container>
+
+          <Skills />
+        </Box>
+      </Main>
       <Footer {...sites} />
     </>
   );

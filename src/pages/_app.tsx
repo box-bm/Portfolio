@@ -1,25 +1,17 @@
 import "@/styles/globals.css";
-import darkTheme from "@/theme/darkTheme";
-import lightTheme from "@/theme/lightTheme";
-import { NextUIProvider } from "@nextui-org/react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import { HeroUIProvider } from "@heroui/react";
 import type { AppProps } from "next/app";
 import { Analytics } from '@vercel/analytics/react';
+import {ThemeProvider as NextThemesProvider} from "next-themes";
+
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <NextThemesProvider
-      defaultTheme="system"
-      attribute="class"
-      value={{
-        light: lightTheme.className,
-        dark: darkTheme.className,
-      }}
-    >
-      <NextUIProvider>
+    <HeroUIProvider>
+      <NextThemesProvider attribute="class">
         <Component {...pageProps} />
         <Analytics />
-      </NextUIProvider>
-    </NextThemesProvider>
+      </NextThemesProvider>
+    </HeroUIProvider>
   );
 }

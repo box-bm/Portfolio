@@ -1,4 +1,3 @@
-import { Grid } from "@nextui-org/react";
 import ProgrammingLanguages from "./programmingLanguages";
 import Languages from "./languages";
 import Frameworks from "./frameworks";
@@ -6,20 +5,20 @@ import Tools from "./tools";
 
 const Skills = () => {
   return (
-    <Grid.Container gap={1}>
-      <Grid xs={12} sm={6} md={3}>
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+      <div>
         <ProgrammingLanguages />
-      </Grid>
-      <Grid xs={12} sm={6} md={3}>
+      </div>
+      <div>
         <Frameworks />
-      </Grid>
-      <Grid xs={12} sm={6} md={3}>
+      </div>
+      <div>
         <Tools />
-      </Grid>
-      <Grid xs={12} sm={6} md={3}>
+      </div>
+      <div>
         <Languages />
-      </Grid>
-    </Grid.Container>
+      </div>
+    </div>
   );
 };
 
